@@ -24,8 +24,7 @@ import random
 
 
 def blackout(strip, apply=True):
-    for i in range(0, len(strip)):
-        strip[i] = (0, 0, 0)
+    strip.fill((0, 0, 0))
 
     if apply:
         strip.show()
@@ -54,11 +53,14 @@ def get_random_colour(*previous_colours_list):
     colours[5] = (255, 0, 255)
     colours[6] = (255, 255, 255)
 
+    # Todo: UGLY AF
+    # Someone else can fix it
     if previous_colours_list is not None:
         for previous_colours_list_loop in previous_colours_list:
-            for colours_loop in colours:
-                if colours_loop[0] is previous_colours_list_loop[0] and colours_loop[1] is previous_colours_list_loop[1] and colours_loop[2] is previous_colours_list_loop[2]:
-                    colours.remove(colours_loop)
+            if previous_colours_list_loop is not None:
+                for colours_loop in colours:
+                    if colours_loop[0] is previous_colours_list_loop[0] and colours_loop[1] is previous_colours_list_loop[1] and colours_loop[2] is previous_colours_list_loop[2]:
+                        colours.remove(colours_loop)
 
     random.shuffle(colours)
     return colours[0]

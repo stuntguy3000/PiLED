@@ -20,24 +20,21 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Modes.Util.ModeUtil import *
-from Effects.Party import *
-
-from Effects.Generic import AllRGBCycleEffect
-
-instance = None
-effects = [AllRainbowCycleStrobeEffect, AllRandomColourEffect, AllRandomColourStrobeEffect,
-           DualAlternatingPixelRandomEffect, DualAlternatingPixelRandomStrobeEffect,
-           DualSplitRandomEffect, DualSplitRandomStrobeEffect, TriSplitRandomEffect, TriSplitRandomStrobeEffect]
-
-def set_instance(PiLED):
-    global instance
-    instance = PiLED
+from Handlers.LEDHandler import *
+from Effects.Util.EffectUtil import *
 
 
-def run():
-    global instance
-    global effects
+def run(strip, colour=None):
+    """ Displays a single colour. """
 
-    while True:
-        run_random_mode(effects, instance)
+    if colour is None:
+        # Known Issue: When using Python Multiprocessing, memory objects are duplicated or something
+        # basically, when going from one thread to another, we are unable to view the previous strip state
+        # I don't think this is an issue as normally profiles don't need to know the previous state of the strip
+        #
+        # Basically, the optional parameter to prevent duplicate colours is useless here
+        colour = get_random_colour()
+
+    strip.fill(colour)
+    strip.show()
+

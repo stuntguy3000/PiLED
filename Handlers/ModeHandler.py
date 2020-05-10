@@ -38,6 +38,7 @@ current_mode_thread = None
 class ModeHandlerClass:
     MODE_MAP = {
         'NORMAL': NormalMode,
+        'PARTY': PartyMode,
         'SINGLE_COLOUR': SingleColourMode,
         'POLICE': PoliceMode
     }
@@ -49,6 +50,8 @@ class ModeHandlerClass:
         global instance
         instance = PiLED
 
+        self.run_mode("NORMAL")
+
     def run_mode(self, mode_name):
         mode_name = str.upper(mode_name)
 
@@ -59,7 +62,7 @@ class ModeHandlerClass:
             run_mode_function = getattr(function_class, "run")
 
             # Run new mode in it's own thread
-            print("[ModeHander] Running mode \"" + mode_name + "\"")
+            print("[ModeHandler] Running mode \"" + mode_name + "\"")
             self.stop_current_mode()
 
             global current_mode_thread
@@ -69,7 +72,7 @@ class ModeHandlerClass:
             # We're done here.
             return True
         except KeyError:
-            print("[ModeHander] Unable to run mode \"" + mode_name + "\". Does it exist?")
+            print("[ModeHandler] Unable to run mode \"" + mode_name + "\". Does it exist?")
             # traceback.print_exc()
 
         return False

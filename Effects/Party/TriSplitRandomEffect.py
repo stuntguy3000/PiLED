@@ -25,28 +25,45 @@ from Effects.Util.EffectUtil import *
 import time
 
 
-def run(strip, loop_count=10):
-    for loop_count_loop in range(0, loop_count):
-        for i in range(0, LED_COUNT):
-            if i % 2 == 0:
-                strip[i] = (0, 0, 255)
-            else:
-                strip[i] = (0, 0, 0)
-        strip.show()
-        time.sleep(0.05)
-
-        blackout(strip, True)
-        time.sleep(0.05)
+def run(strip, delay_ms=50, loop_count=10, flash_count=5):
+    previous_colour1 = None
+    previous_colour2 = None
+    previous_colour3 = None
 
     for loop_count_loop in range(0, loop_count):
-        for i in range(0, LED_COUNT):
-            if i % 2 != 0:
-                strip[i] = (0, 255, 0)
-            else:
-                strip[i] = (0, 0, 0)
+        colour1 = get_random_colour(previous_colour1, previous_colour2, previous_colour3)
+        previous_colour1 = colour1
 
-        strip.show()
-        time.sleep(0.05)
+        colour2 = get_random_colour(previous_colour1, previous_colour2, previous_colour3)
+        previous_colour2 = colour2
 
-        blackout(strip, True)
-        time.sleep(0.05)
+        colour3 = get_random_colour(previous_colour1, previous_colour2, previous_colour3)
+        previous_colour3 = colour3
+
+        for flash_count_loop in range(0, flash_count):
+            for i in range(0, 39):
+                strip[i] = colour1
+
+            strip.show()
+            time.sleep(delay_ms / 1000.0)
+
+            blackout(strip, True)
+            time.sleep(delay_ms / 1000.0)
+
+            for i in range(39, 79):
+                strip[i] = colour2
+
+            strip.show()
+            time.sleep(delay_ms / 1000.0)
+
+            blackout(strip, True)
+            time.sleep(delay_ms / 1000.0)
+
+            for i in range(80, 119):
+                strip[i] = colour3
+
+            strip.show()
+            time.sleep(delay_ms / 1000.0)
+
+            blackout(strip, True)
+            time.sleep(delay_ms / 1000.0)

@@ -36,9 +36,4 @@ class LEDHandlerClass:
         instance = PiLED
 
         # Initialise strip
-        print("[LEDHandler] Starting LED strip...")
-
-        self.LED_STRIP.fill((255, 255, 255))
-        self.LED_STRIP.show()
-
-        print("[LEDHandler] LED strip initialised.")
+        print("[LEDHandler] LEDHandler initialised.")

@@ -35,12 +35,7 @@
 # Run it
 # https://stackoverflow.com/questions/6523791/why-is-python-running-my-module-when-i-import-it-and-how-do-i-stop-it
 
-print(" > Running PiLED File from " + __name__)
-
-
 class PiLEDClass:
-    print(" > Executing PiLED Class from " + __name__)
-
     def __init__(self):
         # Import Classes
         from Handlers import LEDHandler
@@ -80,6 +75,4 @@ class PiLEDClass:
 
 if __name__ == "__main__":
     instance = PiLEDClass()
-
-    print(instance)
     instance.load()

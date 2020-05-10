@@ -20,7 +20,7 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import Effects.Generic.RGBCycleEffect
-import Effects.Generic.AllRainbowEffect
-import Effects.Generic.RainbowCycleEffect
-import Effects.Generic.SingleColourEffect
+import Effects.Generic.AllRGBCycleEffect
+import Effects.Generic.AllCompleteRainbowCycleEffect
+import Effects.Generic.AllRainbowCycleEffect
+import Effects.Generic.AllRandomColourEffect

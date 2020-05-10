@@ -20,20 +20,12 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Handlers.LEDHandler import *
-from Effects.Util.EffectUtil import *
-
-
-def run(strip, colour=None):
-    """ Displays a single colour. """
-
-    if colour is None:
-        # Known Issue: When using Python Multiprocessing, memory objects are duplicated or something
-        # basically, when going from one thread to another, we are unable to view the previous strip state
-        # I don't think this is an issue as normally profiles don't need to know the previous state of the strip
-        #
-        # Basically, the optional parameter to prevent duplicate colours is useless here
-        colour = get_random_colour()
-
-    strip.fill(colour)
-    strip.show()
+import Effects.Party.AllRainbowCycleStrobeEffect
+import Effects.Party.AllRandomColourEffect
+import Effects.Party.AllRandomColourStrobeEffect
+import Effects.Party.DualAlternatingPixelRandomEffect
+import Effects.Party.DualAlternatingPixelRandomStrobeEffect
+import Effects.Party.DualSplitRandomEffect
+import Effects.Party.DualSplitRandomStrobeEffect
+import Effects.Party.TriSplitRandomEffect
+import Effects.Party.TriSplitRandomStrobeEffect

@@ -20,24 +20,17 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Modes.Util.ModeUtil import *
-from Effects.Party import *
-
-from Effects.Generic import AllRGBCycleEffect
-
-instance = None
-effects = [AllRainbowCycleStrobeEffect, AllRandomColourEffect, AllRandomColourStrobeEffect,
-           DualAlternatingPixelRandomEffect, DualAlternatingPixelRandomStrobeEffect,
-           DualSplitRandomEffect, DualSplitRandomStrobeEffect, TriSplitRandomEffect, TriSplitRandomStrobeEffect]
-
-def set_instance(PiLED):
-    global instance
-    instance = PiLED
+from Handlers.LEDHandler import LED_COUNT
+from Effects.Util.EffectUtil import *
+import time
 
 
-def run():
-    global instance
-    global effects
+def run(strip, delay_ms=100, loop_count=50):
+    """ AllRandomColourEffect """
+    colour = None
 
-    while True:
-        run_random_mode(effects, instance)
+    for j in range(0, loop_count):
+        colour = get_random_colour(colour)
+        strip.fill(colour)
+        strip.show()
+        time.sleep(delay_ms / 1000.0)

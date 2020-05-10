@@ -25,8 +25,8 @@ from Effects.Util.EffectUtil import *
 import time
 
 
-def run(strip):
-    for loop_count in range(0, 12):
+def run(strip, loop_count=10):
+    for loop_count_loop in range(0, loop_count):
         for i in range(0, 39):
             strip[i] = (0, 0, 255)
         for i in range(39, 79):
@@ -47,7 +47,7 @@ def run(strip):
         blackout(strip, True)
         time.sleep(0.01)
 
-    for loop_count in range(0, 12):
+    for loop_count_loop in range(0, loop_count):
         for i in range(0, 39):
             strip[i] = (0, 255, 0)
         for i in range(39, 79):

@@ -20,24 +20,37 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Modes.Util.ModeUtil import *
-from Effects.Party import *
-
-from Effects.Generic import AllRGBCycleEffect
-
-instance = None
-effects = [AllRainbowCycleStrobeEffect, AllRandomColourEffect, AllRandomColourStrobeEffect,
-           DualAlternatingPixelRandomEffect, DualAlternatingPixelRandomStrobeEffect,
-           DualSplitRandomEffect, DualSplitRandomStrobeEffect, TriSplitRandomEffect, TriSplitRandomStrobeEffect]
-
-def set_instance(PiLED):
-    global instance
-    instance = PiLED
+from Handlers.LEDHandler import LED_COUNT
+from Effects.Util.EffectUtil import *
+import time
 
 
-def run():
-    global instance
-    global effects
+def run(strip, delay_ms=50, loop_count=10, flash_count=5):
+    previous_colour1 = None
+    previous_colour2 = None
 
-    while True:
-        run_random_mode(effects, instance)
+    for loop_count_loop in range(0, loop_count):
+        colour1 = get_random_colour(previous_colour1, previous_colour2)
+        previous_colour1 = colour1
+
+        colour2 = get_random_colour(previous_colour1, previous_colour2)
+        previous_colour2 = colour2
+
+        for flash_count_loop in range(0, flash_count):
+            for i in range(59, 119):
+                strip[i] = colour1
+
+            strip.show()
+            time.sleep(delay_ms / 1000.0)
+
+            blackout(strip, True)
+            time.sleep(delay_ms / 1000.0)
+
+            for i in range(0, 59):
+                strip[i] = colour2
+
+            strip.show()
+            time.sleep(delay_ms / 1000.0)
+
+            blackout(strip, True)
+            time.sleep(delay_ms / 1000.0)
