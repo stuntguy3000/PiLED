@@ -36,11 +36,9 @@ class LEDHandlerClass:
         instance = PiLED
 
         # Initialise strip
-        print("[LEDHandler] Starting LED strip... (LED_STRIP @ " + str(hex(id(self.LED_STRIP))) + ")")
+        print("[LEDHandler] Starting LED strip...")
 
-        print("STRIP Before: " + str(self.LED_STRIP[0]))
         self.LED_STRIP.fill((255, 255, 255))
         self.LED_STRIP.show()
-        print("STRIP After: " + str(self.LED_STRIP[0]))
 
         print("[LEDHandler] LED strip initialised.")
