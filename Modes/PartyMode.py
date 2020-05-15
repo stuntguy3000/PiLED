@@ -28,7 +28,9 @@ from Effects.Generic import AllRGBCycleEffect
 instance = None
 effects = [AllRainbowCycleStrobeEffect, AllRandomColourEffect, AllRandomColourStrobeEffect,
            DualAlternatingPixelRandomEffect, DualAlternatingPixelRandomStrobeEffect,
-           DualSplitRandomEffect, DualSplitRandomStrobeEffect, TriSplitRandomEffect, TriSplitRandomStrobeEffect]
+           DualSplitRandomEffect, DualSplitRandomStrobeEffect,
+           TriSplitRandomEffect, TriSplitRandomStrobeEffect,
+           FourSplitRandomEffect, FourSplitRandomStrobeEffect]
 
 def set_instance(PiLED):
     global instance

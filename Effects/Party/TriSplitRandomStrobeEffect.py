@@ -50,7 +50,7 @@ def run(strip, delay_ms=50, loop_count=10, flash_count=5):
             blackout(strip, True)
             time.sleep(delay_ms / 1000.0)
 
-            for i in range(39, 79):
+            for i in range(40, 79):
                 strip[i] = colour2
 
             strip.show()

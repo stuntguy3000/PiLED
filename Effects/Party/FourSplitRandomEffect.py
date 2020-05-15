@@ -25,9 +25,11 @@ from Effects.Util.EffectUtil import *
 import time
 
 
-def run(strip, delay_ms=50, loop_count=50):
+def run(strip, delay_ms=50, loop_count=100):
     previous_colour1 = None
     previous_colour2 = None
+    previous_colour3 = None
+    previous_colour4 = None
 
     for loop_count_loop in range(0, loop_count):
         colour1 = get_random_colour()
@@ -36,14 +38,32 @@ def run(strip, delay_ms=50, loop_count=50):
         colour2 = get_random_colour(previous_colour1)
         previous_colour2 = colour2
 
-        for i in range(0, 59):
+        colour3 = get_random_colour(previous_colour1, previous_colour2)
+        previous_colour3 = colour3
+
+        colour4 = get_random_colour(previous_colour1, previous_colour2, previous_colour3)
+        previous_colour4 = colour4
+
+        for i in range(0, 29):
             strip[i] = colour1
 
         strip.show()
         time.sleep(delay_ms / 1000.0)
 
-        for i in range(59, 119):
+        for i in range(30, 59):
             strip[i] = colour2
+
+        strip.show()
+        time.sleep(delay_ms / 1000.0)
+
+        for i in range(60, 89):
+            strip[i] = colour3
+
+        strip.show()
+        time.sleep(delay_ms / 1000.0)
+
+        for i in range(90, 119):
+            strip[i] = colour4
 
         strip.show()
         time.sleep(delay_ms / 1000.0)
