@@ -24,7 +24,7 @@ from Modes.Util.ModeUtil import *
 from Effects.Generic import *
 
 instance = None
-effects = [AllCompleteRainbowCycleEffect, AllRainbowCycleEffect, AllRGBCycleEffect]
+effects = [AllCompleteRainbowCycleEffect, AllRainbowCycleEffect, AllRGBCycleEffect, PrimarySecondaryColourCycleEffect]
 
 def set_instance(PiLED):
     global instance
@@ -36,4 +36,5 @@ def run():
     global effects
 
     while True:
-        run_random_mode(effects, instance)
+        run_mode(PrimarySecondaryColourCycleEffect, instance)
+        #run_random_mode(effects, instance)

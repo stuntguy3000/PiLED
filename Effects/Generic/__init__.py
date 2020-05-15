@@ -24,3 +24,4 @@ import Effects.Generic.AllRGBCycleEffect
 import Effects.Generic.AllCompleteRainbowCycleEffect
 import Effects.Generic.AllRainbowCycleEffect
 import Effects.Generic.AllRandomColourEffect
+import Effects.Generic.PrimarySecondaryColourCycleEffect

@@ -25,11 +25,11 @@ from Effects.Util.EffectUtil import *
 import time
 
 
-def run(strip, delay_ms=20, loop_count=5, loop_increment=1):
+def run(strip, delay_ms=20, loop_count=5):
     """ Rotates through the RGB colour space. All pixels show the same colour. """
 
     for loopCountLoop in range(0, loop_count):
-        for x in range(0, 255, loop_increment):
+        for x in range(0, 255):
             for i in range(LED_COUNT):
                 strip[i] = wheel(x)
 

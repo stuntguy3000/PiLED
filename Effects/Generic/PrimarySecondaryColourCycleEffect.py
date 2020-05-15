@@ -25,7 +25,7 @@ from Effects.Util.EffectUtil import *
 import time
 
 
-def run(strip, delay_ms=5000, loop_count=2, loop_increment=1):
+def run(strip, delay_ms=10000, loop_count=10):
     """ Rotates through primary colours. All pixels show the same colour. """
     """ Default delay is 5 seconds """
 

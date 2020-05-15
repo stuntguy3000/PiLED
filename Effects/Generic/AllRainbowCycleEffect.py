@@ -25,10 +25,10 @@ from Effects.Util.EffectUtil import *
 import time
 
 
-def run(strip, delay_ms=20, loop_count=5, loop_increment=1):
+def run(strip, delay_ms=20, loop_count=5):
     """ Draw rainbow that uniformly distributes itself across all pixels. """
 
-    for j in range(0, 256 * loop_count, loop_increment):
+    for j in range(0, 256 * loop_count):
         for i in range(LED_COUNT):
             strip[i] = wheel((int(i * 256 / LED_COUNT) + j) & 255)
 

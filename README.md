@@ -14,7 +14,7 @@ Three police style strobe light modes to simulate police light bar.
 Picks a primary colour at random and displays it staticly.
 
 
-### TODO: Party
+### Party
 Various strobe and fast changing effects
 
 

@@ -65,7 +65,7 @@ class PiLEDClass:
         print(" |  __/| | |___| |___| |_| |")
         print(" |_|   |_|_____|_____|____/")
         print("")
-        print("PiLED v1.0 by stuntguy3000.")
+        print("PiLED by stuntguy3000.")
         print("")
         print("")
 
