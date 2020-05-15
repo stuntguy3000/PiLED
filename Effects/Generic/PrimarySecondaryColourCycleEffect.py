@@ -29,17 +29,14 @@ def run(strip, delay_ms=10000, loop_count=10):
     """ Rotates through primary colours. All pixels show the same colour. """
     """ Default delay is 5 seconds """
 
-    colour = get_random_colour()
     """ Set the initial colour """
-    print("Setting Initial Colour")
+    colour = get_random_colour()
     for i in range(LED_COUNT):
         strip[i] = colour
     strip.show()
 
     time.sleep(delay_ms / 1000.0)
 
-
-    print("Fading to next colour")
     for loopCountLoop in range(0, loop_count):
         """ Determine the next colour and fade to it """
         nextColour = get_random_colour(colour)

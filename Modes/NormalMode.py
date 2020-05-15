@@ -36,5 +36,4 @@ def run():
     global effects
 
     while True:
-        run_mode(PrimarySecondaryColourCycleEffect, instance)
-        #run_random_mode(effects, instance)
+        run_random_mode(effects, instance)
