@@ -91,3 +91,12 @@ def get_random_colour(*previous_colours_list):
 
     random.shuffle(colours)
     return colours[0]
+
+
+def get_index_with_modifier(base_number, modifier):
+    index = base_number + modifier
+
+    while index >= LED_COUNT:
+        index -= LED_COUNT
+
+    return index

@@ -24,7 +24,7 @@ from Effects.Generic import *
 from Modes.Util.ModeUtil import *
 
 instance = None
-effects = [AllCompleteRainbowCycleEffect, AllRainbowCycleEffect, AllRGBCycleEffect, PrimarySecondaryColourCycleEffect]
+effects = [AllCompleteRainbowCycleEffect, AllRainbowCycleEffect, AllRGBCycleEffect, CycleColourEffect, MovingColourEffect]
 
 
 def set_instance(PiLED):

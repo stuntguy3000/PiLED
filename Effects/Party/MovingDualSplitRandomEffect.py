@@ -20,15 +20,28 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import Effects.Party.AllRainbowCycleStrobeEffect
-import Effects.Party.AllRandomColourEffect
-import Effects.Party.AllRandomColourStrobeEffect
-import Effects.Party.DualAlternatingPixelRandomEffect
-import Effects.Party.DualAlternatingPixelRandomStrobeEffect
-import Effects.Party.DualSplitRandomEffect
-import Effects.Party.DualSplitRandomStrobeEffect
-import Effects.Party.FourSplitRandomEffect
-import Effects.Party.FourSplitRandomStrobeEffect
-import Effects.Party.TriSplitRandomEffect
-import Effects.Party.TriSplitRandomStrobeEffect
-import Effects.Party.MovingDualSplitRandomEffect
+import time
+
+from Effects.Util.EffectUtil import *
+
+
+def run(strip, loop_count=6):
+    previous_colour1 = None
+    previous_colour2 = None
+
+    for x in range(0, loop_count):
+        colour1 = get_random_colour(previous_colour1, previous_colour2)
+        previous_colour1 = colour1
+
+        colour2 = get_random_colour(previous_colour1, previous_colour2)
+        previous_colour2 = colour2
+
+        for y in range(0, loop_count):
+            for modifier in range(0, LED_COUNT, 6):
+                for i in range(0, LED_COUNT//2):
+                    strip[get_index_with_modifier(i, modifier)] = colour1
+
+                for i in range(LED_COUNT//2, LED_COUNT):
+                    strip[get_index_with_modifier(i, modifier)] = colour2
+
+                strip.show()

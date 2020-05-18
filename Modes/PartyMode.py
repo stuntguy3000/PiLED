@@ -28,7 +28,8 @@ effects = [AllRainbowCycleStrobeEffect, AllRandomColourEffect, AllRandomColourSt
            DualAlternatingPixelRandomEffect, DualAlternatingPixelRandomStrobeEffect,
            DualSplitRandomEffect, DualSplitRandomStrobeEffect,
            TriSplitRandomEffect, TriSplitRandomStrobeEffect,
-           FourSplitRandomEffect, FourSplitRandomStrobeEffect]
+           FourSplitRandomEffect, FourSplitRandomStrobeEffect,
+           MovingDualSplitRandomEffect]
 
 
 def set_instance(PiLED):
