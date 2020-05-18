@@ -20,10 +20,8 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Modes.Util.ModeUtil import *
 from Effects.Party import *
-
-from Effects.Generic import AllRGBCycleEffect
+from Modes.Util.ModeUtil import *
 
 instance = None
 effects = [AllRainbowCycleStrobeEffect, AllRandomColourEffect, AllRandomColourStrobeEffect,
@@ -31,6 +29,7 @@ effects = [AllRainbowCycleStrobeEffect, AllRandomColourEffect, AllRandomColourSt
            DualSplitRandomEffect, DualSplitRandomStrobeEffect,
            TriSplitRandomEffect, TriSplitRandomStrobeEffect,
            FourSplitRandomEffect, FourSplitRandomStrobeEffect]
+
 
 def set_instance(PiLED):
     global instance

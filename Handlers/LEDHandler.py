@@ -20,13 +20,14 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import neopixel
 import board
+import neopixel
 
 instance = None
 
 LED_COUNT = 120
 LED_PIN = board.D18
+
 
 class LEDHandlerClass:
     LED_STRIP = neopixel.NeoPixel(LED_PIN, LED_COUNT, auto_write=False, brightness=1, pixel_order=neopixel.RGB)

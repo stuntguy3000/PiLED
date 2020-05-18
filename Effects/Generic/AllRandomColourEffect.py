@@ -20,7 +20,6 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Handlers.LEDHandler import *
 from Effects.Util.EffectUtil import *
 
 
@@ -37,4 +36,3 @@ def run(strip, colour=None):
 
     strip.fill(colour)
     strip.show()
-

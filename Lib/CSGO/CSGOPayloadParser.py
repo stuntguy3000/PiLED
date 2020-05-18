@@ -26,7 +26,6 @@ SOFTWARE.
 
 '''
 
-import Lib.CSGO.CSGOGamestate
 
 class PayloadParserClass:
     def parse_payload(self, payload, gamestate):

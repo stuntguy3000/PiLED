@@ -20,11 +20,12 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Modes.Util.ModeUtil import *
 from Effects.Generic import *
+from Modes.Util.ModeUtil import *
 
 instance = None
 effects = [AllCompleteRainbowCycleEffect, AllRainbowCycleEffect, AllRGBCycleEffect, PrimarySecondaryColourCycleEffect]
+
 
 def set_instance(PiLED):
     global instance

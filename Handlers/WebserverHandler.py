@@ -20,18 +20,20 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import socketserver
 import http.server
 import re
+import socketserver
 
 instance = None
+
 
 class WebserverHandlerClass():
     WEBSERVER_HOST = "LukePi"
     WEBSERVER_PORT = 1337
 
     def init(self, PiLED):
-        print("[WebserverHandler] Starting web server at address http://" + self.WEBSERVER_HOST + ":" + str(self.WEBSERVER_PORT) + "/")
+        print("[WebserverHandler] Starting web server at address http://" + self.WEBSERVER_HOST + ":" + str(
+            self.WEBSERVER_PORT) + "/")
         socketserver.TCPServer.allow_reuse_address = True
 
         # Set Instance
@@ -41,6 +43,7 @@ class WebserverHandlerClass():
         server = socketserver.ThreadingTCPServer(('', self.WEBSERVER_PORT), WebserverResponseHandlerClass)
         server.serve_forever()
         print("[WebserverHandler] Web server running.")
+
 
 class WebserverResponseHandlerClass(http.server.SimpleHTTPRequestHandler):
     REGEX_MODE = "/mode/([A-z]+)"
@@ -68,4 +71,3 @@ class WebserverResponseHandlerClass(http.server.SimpleHTTPRequestHandler):
                 self.send_error(404, "Mode not found.")
 
             return
-

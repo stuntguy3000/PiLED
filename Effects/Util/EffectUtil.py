@@ -20,12 +20,14 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Handlers.LEDHandler import LED_COUNT
-
 import random
 import time
 
+from Handlers.LEDHandler import LED_COUNT
+
 """ https://stackoverflow.com/questions/41793471/python-rgb-led-color-fading """
+
+
 def color_fade(strip, colorFrom, colorTo, wait_ms=5, steps=200):
     step_R = (colorTo[0] - colorFrom[0]) / steps
     step_G = (colorTo[1] - colorFrom[1]) / steps
@@ -45,6 +47,7 @@ def color_fade(strip, colorFrom, colorTo, wait_ms=5, steps=200):
         r += step_R
         g += step_G
         b += step_B
+
 
 def blackout(strip, apply=True):
     strip.fill((0, 0, 0))
@@ -82,7 +85,8 @@ def get_random_colour(*previous_colours_list):
         for previous_colours_list_loop in previous_colours_list:
             if previous_colours_list_loop is not None:
                 for colours_loop in colours:
-                    if colours_loop[0] is previous_colours_list_loop[0] and colours_loop[1] is previous_colours_list_loop[1] and colours_loop[2] is previous_colours_list_loop[2]:
+                    if colours_loop[0] is previous_colours_list_loop[0] and colours_loop[1] is \
+                            previous_colours_list_loop[1] and colours_loop[2] is previous_colours_list_loop[2]:
                         colours.remove(colours_loop)
 
     random.shuffle(colours)

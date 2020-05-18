@@ -20,9 +20,9 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Handlers.LEDHandler import LED_COUNT
-from Effects.Util.EffectUtil import *
 import time
+
+from Effects.Util.EffectUtil import *
 
 
 def run(strip, delay_ms=50, loop_count=50):

@@ -20,16 +20,14 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Modes import NormalMode
-from Modes import SingleColourMode
+# import traceback
+import multiprocessing
+
 from Modes import CSGOMode
+from Modes import NormalMode
 from Modes import PartyMode
 from Modes import PoliceMode
-
-
-#import traceback
-import multiprocessing
-from multiprocessing import Value
+from Modes import SingleColourMode
 
 instance = None
 current_mode_thread = None

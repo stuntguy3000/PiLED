@@ -20,10 +20,11 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Modes.Util.ModeUtil import *
 from Effects.Police import *
+from Modes.Util.ModeUtil import *
 
 instance = None
+
 
 def set_instance(PiLED):
     global instance

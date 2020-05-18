@@ -26,12 +26,14 @@ SOFTWARE.
 
 '''
 
-
 """
 Classes to represent Player information
 """
+
+
 class Player:
     """Class to store player information"""
+
     def __init__(self):
         self.name = None
         self.activity = None
@@ -46,8 +48,10 @@ class Player:
         self.match_stats = MatchStats()
         self.weapons = {}
 
+
 class State:
     """Class to store player state information"""
+
     def __init__(self):
         self.armor = None
         self.burning = None
@@ -61,8 +65,10 @@ class State:
         self.round_totaldmg = None
         self.smoked = None
 
+
 class MatchStats:
     """Class to store player match stats information"""
+
     def __init__(self):
         self.assists = None
         self.deaths = None
@@ -74,8 +80,11 @@ class MatchStats:
 """
 Classes to represent Map information
 """
+
+
 class Map:
     """Class to store map information"""
+
     def __init__(self):
         self.round_wins = None
         self.current_spectators = None
@@ -88,8 +97,10 @@ class Map:
         self.team_ct = Team()
         self.team_t = Team()
 
+
 class Team:
     """Class to store map teams information"""
+
     def __init__(self):
         self.consecutive_round_losses = None
         self.matches_won_this_series = None
@@ -101,8 +112,11 @@ class Team:
 """
 Class to represent Provider information
 """
+
+
 class Provider:
     """Class to store provider information"""
+
     def __init__(self):
         self.appid = None
         self.name = None
@@ -115,8 +129,11 @@ class Provider:
 """
 Class to represent Phase Countdowns information
 """
+
+
 class PhaseCountdowns:
     """Class to store phase countdowns information"""
+
     def __init__(self):
         self.phase = None
         self.phase_ends_in = None
@@ -125,8 +142,11 @@ class PhaseCountdowns:
 """
 Class to represent Bomb information
 """
+
+
 class Bomb:
     """Class to store bomb information"""
+
     def __init__(self):
         self.player = None
         self.position = None
@@ -137,8 +157,11 @@ class Bomb:
 """
 Class to represent Round information
 """
+
+
 class Round:
     """Class to store round information"""
+
     def __init__(self):
         self.phase = None
         self.win_team = None

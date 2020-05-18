@@ -22,9 +22,11 @@
 
 import random
 
+
 def run_mode(mode_class, instance):
     run_mode_function = getattr(mode_class, "run")
     run_mode_function(instance.LEDHandlerInstance.LED_STRIP)
+
 
 def run_random_mode(mode_list, instance):
     randomNumber = random.randint(1, len(mode_list))

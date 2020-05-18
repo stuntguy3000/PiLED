@@ -27,7 +27,7 @@ import Effects.Party.DualAlternatingPixelRandomEffect
 import Effects.Party.DualAlternatingPixelRandomStrobeEffect
 import Effects.Party.DualSplitRandomEffect
 import Effects.Party.DualSplitRandomStrobeEffect
-import Effects.Party.TriSplitRandomEffect
-import Effects.Party.TriSplitRandomStrobeEffect
 import Effects.Party.FourSplitRandomEffect
 import Effects.Party.FourSplitRandomStrobeEffect
+import Effects.Party.TriSplitRandomEffect
+import Effects.Party.TriSplitRandomStrobeEffect
