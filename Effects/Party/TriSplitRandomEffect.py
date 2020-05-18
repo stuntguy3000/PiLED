@@ -40,19 +40,19 @@ def run(strip, delay_ms=50, loop_count=100):
         colour3 = get_random_colour(previous_colour1, previous_colour2, previous_colour3)
         previous_colour3 = colour3
 
-        for i in range(0, 39):
+        for i in range(0, 40):
             strip[i] = colour1
 
         strip.show()
         time.sleep(delay_ms / 1000.0)
 
-        for i in range(40, 79):
+        for i in range(40, 80):
             strip[i] = colour2
 
         strip.show()
         time.sleep(delay_ms / 1000.0)
 
-        for i in range(80, 119):
+        for i in range(80, 120):
             strip[i] = colour3
 
         strip.show()

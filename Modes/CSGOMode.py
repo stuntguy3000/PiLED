@@ -19,3 +19,22 @@
 #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
+
+from Handlers.GSI.CSGOGSIHandler import CSGOGSIHandlerClass
+
+instance = None
+
+
+def set_instance(PiLED):
+    global instance
+    instance = PiLED
+
+
+def run():
+    gsi = CSGOGSIHandlerClass()
+    gsi.run(instance)
+
+    # Keepalive
+    # TODO: Is this the best way to do this?
+    while True:
+        pass

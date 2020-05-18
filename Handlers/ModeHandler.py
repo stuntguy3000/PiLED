@@ -40,7 +40,8 @@ class ModeHandlerClass:
         'NORMAL': NormalMode,
         'PARTY': PartyMode,
         'SINGLE_COLOUR': SingleColourMode,
-        'POLICE': PoliceMode
+        'POLICE': PoliceMode,
+        'CSGO': CSGOMode
     }
 
     def init(self, PiLED):

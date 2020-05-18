@@ -20,27 +20,34 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-instance = None
+from Lib.CSGO.CSGOServer import GSIServer
 
+instance = None
 server = None
-SERVER_IP = "127.0.0.1"
+
+SERVER_IP = ""
 SERVER_PORT = 3000
 GSI_KEY = "PiLED"
 
-def run(PiLED):
+
+def event_handler():
     global instance
-    instance = PiLED
-
-    # Start GSI Server
-    print("[CSGOGSIHandler] Starting GSI Server on " + SERVER_IP + ":" + GSI_KEY)
     global server
-    server = GSIServer((SERVER_IP, SERVER_PORT), SERVER_KEY)
-    server.start_server()
+    print("CS:GO Event Received!")
 
-    # Would be nice to do event based programming, and it's probably possible, but oh well......................maybe
-    # Instead, we will need to check the gamestate constantly
-    #
-    # unless i modify the bloody API
-    #
-    # maybe
-    # #effort
+
+class CSGOGSIHandlerClass:
+    def run(self, PiLED):
+        global instance
+        global server
+        global SERVER_IP
+        global SERVER_PORT
+        global GSI_KEY
+
+        instance = PiLED
+
+        # Start GSI Server
+        print("[CSGOGSIHandler] Starting GSI Server on \"" + SERVER_IP + ":" + str(SERVER_PORT) + "\"")
+
+        server = GSIServer((SERVER_IP, SERVER_PORT), GSI_KEY, event_handler)
+        server.start_server()

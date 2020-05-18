@@ -29,43 +29,53 @@ SOFTWARE.
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from operator import attrgetter
 from threading import Thread
+
+from Lib.CSGO.CSGOGamestate import GameStateClass
+from Lib.CSGO.CSGOPayloadParser import PayloadParserClass
+
 import json
 
-import gamestate
-import payloadparser
 
 class GSIServer(HTTPServer):
-    def __init__(self, server_address, auth_token):
+    # stuntguy3000 - Add event handler callback function
+    def __init__(self, server_address, auth_token, event_handler):
         super(GSIServer, self).__init__(server_address, RequestHandler)
 
         self.auth_token = auth_token
-        self.gamestate = gamestate.GameState()
-        self.parser = payloadparser.PayloadParser()
-        
+        self.gamestate = GameStateClass()
+        self.parser = PayloadParserClass()
+
         self.running = False
+        self.event_handler = event_handler
 
     def start_server(self):
         try:
             thread = Thread(target=self.serve_forever)
             thread.start()
-            first_time = True
-            while self.running == False:
-                if first_time == True:
-                    print("CS:GO GSI Server starting..")
-                first_time = False
+            print("Server started.")
+            # stuntguy3000 - Disabled first_time console printing
+            # first_time = True
+            # while self.running == False:
+            #    if first_time == True:
+            #        print("CS:GO GSI Server starting..")
+            #    first_time = False
         except:
-            print("Could not start server.")
+            # stuntguy3000 - Added prefix to error message and program halt
+            print("[CSGOGSIServer] Could not start server.")
+            exit(1)
 
     def get_info(self, target, *argv):
         try:
+            # stuntguy3000 - Syntax errors are being thrown... replacing string format
             if len(argv) == 0:
-                state = attrgetter(f"{target}")(self.gamestate)
+                state = attrgetter("{}".format(self.gamestate))
             elif len(argv) == 1:
-                state = attrgetter(f"{target}.{argv[0]}")(self.gamestate)
+                state = attrgetter("{}.{}".format(self.gamestate, argv[0]))
             elif len(argv) == 2:
-                state = attrgetter(f"{target}.{argv[0]}")(self.gamestate)[f"{argv[1]}"]
+                state = attrgetter("{}.{}".format(self.gamestate, argv[1]))
             else:
-                print("Too many arguments.")
+                # stuntguy3000 - Added prefix to error message
+                print("[CSGOGSIServer] Too many arguments.")
                 return False
             if "object" in str(state):
                 return vars(state)
@@ -75,6 +85,7 @@ class GSIServer(HTTPServer):
             print(E)
             return False
 
+
 class RequestHandler(BaseHTTPRequestHandler):
     def do_POST(self):
         length = int(self.headers["Content-Length"])
@@ -83,12 +94,16 @@ class RequestHandler(BaseHTTPRequestHandler):
         payload = json.loads(body)
 
         if not self.authenticate_payload(payload):
-            print("auth_token does not match.")
+            # stuntguy3000 - Added prefix to error message
+            print("[CSGOGSIServer] auth_token does not match.")
             return False
         else:
             self.server.running = True
 
         self.server.parser.parse_payload(payload, self.server.gamestate)
+
+        # stuntguy3000 - Call event handler
+        self.server.event_handler()
 
     def authenticate_payload(self, payload):
         if "auth" in payload and "token" in payload["auth"]:
