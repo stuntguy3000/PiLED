@@ -3,6 +3,23 @@ A simple Python application to control **WS2812B** NeoPixel LEDs from a **Raspbe
 
 PiLED hosts a web server on port `1337` to run specific modes with pre-defined effects.
 
+## Setup
+1. Copy/git clone the repository to a folder
+2. Make a virtual environment 
+3. Enter the virtual environment
+4. Install the requirements 
+5. Exit the virtual environment 
+6. Run the application! 
+
+```
+cd /home/pi/PiLED
+python3 -m venv venv
+source venv/bin/activate
+pip3 install --default-timeout=100 -r requirements.txt
+deactivate
+sudo /home/pi/PiLED/venv/bin/python3 /home/pi/PiLED/PiLED.py
+```
+
 ## Modes
 ### Normal
 Considered as the default mode, this has three rainbow/RGB fade effects.

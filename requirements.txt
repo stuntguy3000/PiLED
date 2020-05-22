@@ -1,4 +1,4 @@
-Adafruit-Blinka==4.8.1
+Adafruit-Blinka==4.9.0
 adafruit-circuitpython-neopixel==6.0.0
 adafruit-circuitpython-pypixelbuf==2.0.0
 Adafruit-PlatformDetect==2.11.1
