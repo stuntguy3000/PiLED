@@ -25,7 +25,7 @@ import time
 from Effects.Util.EffectUtil import *
 
 
-def run(strip, delay_ms=100, loop_count=10, flash_count_loop=5):
+def run(strip, delay_ms=100, loop_count=10, flash_count=5):
     previous_colour1 = None
     previous_colour2 = None
     previous_colour3 = None
