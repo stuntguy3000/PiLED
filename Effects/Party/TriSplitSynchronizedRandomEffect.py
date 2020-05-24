@@ -20,21 +20,34 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import Effects.Party.AllRainbowCycleStrobeEffect
-import Effects.Party.AllRandomColourEffect
-import Effects.Party.AllRandomColourStrobeEffect
-import Effects.Party.DualAlternatingPixelRandomEffect
-import Effects.Party.DualAlternatingPixelRandomStrobeEffect
-import Effects.Party.DualSplitRandomEffect
-import Effects.Party.DualSplitRandomStrobeEffect
-import Effects.Party.FourSplitRandomEffect
-import Effects.Party.FourSplitRandomStrobeEffect
-import Effects.Party.TriSplitRandomEffect
-import Effects.Party.TriSplitRandomStrobeEffect
-import Effects.Party.DualSplitMovingRandomEffect
-import Effects.Party.DualSplitSynchronizedRandomStrobeEffect
-import Effects.Party.DualSplitSynchronizedRandomEffect
-import Effects.Party.TriSplitSynchronizedRandomStrobeEffect
-import Effects.Party.TriSplitSynchronizedRandomEffect
-import Effects.Party.FourSplitSynchronizedRandomStrobeEffect
-import Effects.Party.FourSplitSynchronizedRandomEffect
+from Handlers.LEDHandler import LED_COUNT
+from Effects.Util.EffectUtil import *
+import time
+
+
+def run(strip, delay_ms=100, loop_count=100):
+    previous_colour1 = None
+    previous_colour2 = None
+    previous_colour3 = None
+
+    for loop_count_loop in range(0, loop_count):
+        colour1 = get_random_colour(previous_colour1, previous_colour2, previous_colour3)
+        previous_colour1 = colour1
+
+        colour2 = get_random_colour(previous_colour1, previous_colour2, previous_colour3)
+        previous_colour2 = colour2
+
+        colour3 = get_random_colour(previous_colour1, previous_colour2, previous_colour3)
+        previous_colour3 = colour3
+
+        for i in range(0, 40):
+            strip[i] = colour1
+
+        for i in range(40, 80):
+            strip[i] = colour2
+
+        for i in range(80, 120):
+            strip[i] = colour3
+
+        strip.show()
+        time.sleep(delay_ms / 1000.0)

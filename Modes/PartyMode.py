@@ -27,9 +27,12 @@ instance = None
 effects = [AllRainbowCycleStrobeEffect, AllRandomColourEffect, AllRandomColourStrobeEffect,
            DualAlternatingPixelRandomEffect, DualAlternatingPixelRandomStrobeEffect,
            DualSplitRandomEffect, DualSplitRandomStrobeEffect,
+           DualSplitSynchronizedRandomEffect, DualSplitSynchronizedRandomStrobeEffect,
            TriSplitRandomEffect, TriSplitRandomStrobeEffect,
+           TriSplitSynchronizedRandomEffect, TriSplitSynchronizedRandomStrobeEffect,
            FourSplitRandomEffect, FourSplitRandomStrobeEffect,
-           MovingDualSplitRandomEffect]
+           FourSplitSynchronizedRandomEffect, FourSplitSynchronizedRandomStrobeEffect,
+           DualSplitMovingRandomEffect]
 
 
 def set_instance(PiLED):
@@ -43,3 +46,4 @@ def run():
 
     while True:
         run_random_mode(effects, instance)
+
