@@ -20,21 +20,18 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Effects.Generic import *
-from Modes.Util.ModeUtil import *
+import time
 
-instance = None
-effects = [RainbowCycleEffect, FullRainbowCycleEffect, RGBCycleEffect, RandomColourCycleEffect, DualSplitMovingColourEffect]
+from Effects.Util.EffectUtil import *
 
 
-def set_instance(PiLED):
-    global instance
-    instance = PiLED
+def run(strip, delay_ms=50, loop_count=10, loop_increment=20):
+    for j in range(0, 256 * loop_count, loop_increment):
+        for i in range(LED_COUNT):
+            strip[i] = wheel((int(i * 256 / LED_COUNT) + j) & 255)
 
+        strip.show()
+        time.sleep(delay_ms / 1000.0)
 
-def run():
-    global instance
-    global effects
-
-    while True:
-        run_mode(RGBCycleEffect, instance)
+        blackout(strip, True)
+        time.sleep(delay_ms / 1000.0)

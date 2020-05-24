@@ -33,4 +33,4 @@ def set_instance(PiLED):
 
 def run():
     global instance
-    run_mode(AllRandomColourEffect, instance)
+    run_mode(StaticRandomColourEffect, instance)

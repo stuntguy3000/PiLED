@@ -20,9 +20,9 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import Effects.Party.AllRainbowCycleStrobeEffect
-import Effects.Party.AllRandomColourEffect
-import Effects.Party.AllRandomColourStrobeEffect
+import Effects.Party.FullRainbowCycleStrobeEffect
+import Effects.Party.SingleRandomColourEffect
+import Effects.Party.SingleRandomColourStrobeEffect
 import Effects.Party.DualAlternatingPixelRandomEffect
 import Effects.Party.DualAlternatingPixelRandomStrobeEffect
 import Effects.Party.DualSplitRandomEffect
@@ -38,3 +38,4 @@ import Effects.Party.TriSplitSynchronizedRandomStrobeEffect
 import Effects.Party.TriSplitSynchronizedRandomEffect
 import Effects.Party.FourSplitSynchronizedRandomStrobeEffect
 import Effects.Party.FourSplitSynchronizedRandomEffect
+import Effects.Party.FastRGBCycleStrobeEffect

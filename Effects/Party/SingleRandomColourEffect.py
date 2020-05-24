@@ -25,15 +25,11 @@ import time
 from Effects.Util.EffectUtil import *
 
 
-def run(strip, delay_ms=50, loop_count=50):
-    """ AllRandomColourEffect + Strobe """
+def run(strip, delay_ms=100, loop_count=50):
     colour = None
 
     for j in range(0, loop_count):
         colour = get_random_colour(colour)
         strip.fill(colour)
         strip.show()
-        time.sleep(delay_ms / 1000.0)
-
-        blackout(strip, True)
         time.sleep(delay_ms / 1000.0)

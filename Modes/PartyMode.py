@@ -24,7 +24,7 @@ from Effects.Party import *
 from Modes.Util.ModeUtil import *
 
 instance = None
-effects = [AllRainbowCycleStrobeEffect, AllRandomColourEffect, AllRandomColourStrobeEffect,
+effects = [FullRainbowCycleStrobeEffect, FastRGBCycleStrobeEffect, SingleRandomColourEffect, SingleRandomColourStrobeEffect,
            DualAlternatingPixelRandomEffect, DualAlternatingPixelRandomStrobeEffect,
            DualSplitRandomEffect, DualSplitRandomStrobeEffect,
            DualSplitSynchronizedRandomEffect, DualSplitSynchronizedRandomStrobeEffect,

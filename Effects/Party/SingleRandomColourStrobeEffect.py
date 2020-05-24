@@ -25,12 +25,12 @@ import time
 from Effects.Util.EffectUtil import *
 
 
-def run(strip, delay_ms=50, loop_count=10, loop_increment=20):
-    """ AllRainbowCycleEffect + Strobe """
-    for j in range(0, 256 * loop_count, loop_increment):
-        for i in range(LED_COUNT):
-            strip[i] = wheel((int(i * 256 / LED_COUNT) + j) & 255)
+def run(strip, delay_ms=50, loop_count=50):
+    colour = None
 
+    for j in range(0, loop_count):
+        colour = get_random_colour(colour)
+        strip.fill(colour)
         strip.show()
         time.sleep(delay_ms / 1000.0)
 

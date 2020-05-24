@@ -25,12 +25,14 @@ import time
 from Effects.Util.EffectUtil import *
 
 
-def run(strip, delay_ms=100, loop_count=50):
-    """ AllRandomColourEffect """
-    colour = None
+def run(strip, delay_ms=50, loop_count=10, colour_loop_increment=20):
+    for loop_count_increment in range(0, loop_count):
+        for x in range(0, 255, colour_loop_increment):
+            for i in range(LED_COUNT):
+                strip[i] = wheel(x)
 
-    for j in range(0, loop_count):
-        colour = get_random_colour(colour)
-        strip.fill(colour)
-        strip.show()
-        time.sleep(delay_ms / 1000.0)
+            strip.show()
+            time.sleep(delay_ms / 1000.0)
+
+            blackout(strip, True)
+            time.sleep(delay_ms / 1000.0)
