@@ -35,6 +35,6 @@ def run():
     global instance
 
     while True:
-        run_mode(RedBluePoliceEffect, instance)
-        run_mode(RedWhiteBluePoliceEffect, instance)
+        run_mode(RedBlueAllPoliceEffect, instance)
+        run_mode(LightbarPoliceEffect, instance)
         run_mode(RedBlueSplitPoliceEffect, instance)

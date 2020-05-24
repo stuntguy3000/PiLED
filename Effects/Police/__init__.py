@@ -20,6 +20,6 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import Effects.Police.RedBluePoliceEffect
+import Effects.Police.RedBlueAllPoliceEffect
 import Effects.Police.RedBlueSplitPoliceEffect
-import Effects.Police.RedWhiteBluePoliceEffect
+import Effects.Police.LightbarPoliceEffect
