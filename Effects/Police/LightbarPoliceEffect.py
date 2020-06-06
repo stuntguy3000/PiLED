@@ -25,47 +25,48 @@ import time
 from Effects.Util.EffectUtil import *
 
 
-def run(strip, loop_count=10):
-    for loop_count_loop in range(0, loop_count):
-        for i in range(0, 39):
-            strip[i] = (0, 0, 255)
-        for i in range(39, 79):
-            strip[i] = (0, 0, 0)
-        for i in range(79, 119):
-            strip[i] = (0, 255, 0)
+def run(strip, loop_count=2, flash_count=10):
+    for x in range(0, loop_count):
+        for y in range(0, flash_count):
+            for i in range(0, 39):
+                strip[i] = (0, 0, 255)
+            for i in range(39, 79):
+                strip[i] = (0, 0, 0)
+            for i in range(79, 119):
+                strip[i] = (0, 255, 0)
 
-        strip.show()
-        time.sleep(0.05)
+            strip.show()
+            time.sleep(0.05)
 
-        blackout(strip, False)
-        for i in range(39, 79):
-            strip[i] = (255, 255, 255)
+            blackout(strip, False)
+            for i in range(39, 79):
+                strip[i] = (255, 255, 255)
 
-        strip.show()
-        time.sleep(0.04)
+            strip.show()
+            time.sleep(0.04)
 
-        blackout(strip, True)
-        time.sleep(0.01)
+            blackout(strip, True)
+            time.sleep(0.01)
 
-    for loop_count_loop in range(0, loop_count):
-        for i in range(0, 39):
-            strip[i] = (0, 255, 0)
-        for i in range(39, 79):
-            strip[i] = (0, 0, 0)
-        for i in range(79, 119):
-            strip[i] = (0, 0, 255)
+        for y in range(0, flash_count):
+            for i in range(0, 39):
+                strip[i] = (0, 255, 0)
+            for i in range(39, 79):
+                strip[i] = (0, 0, 0)
+            for i in range(79, 119):
+                strip[i] = (0, 0, 255)
 
-        strip.show()
-        time.sleep(0.05)
+            strip.show()
+            time.sleep(0.05)
 
-        blackout(strip, False)
-        for i in range(39, 79):
-            strip[i] = (255, 255, 255)
+            blackout(strip, False)
+            for i in range(39, 79):
+                strip[i] = (255, 255, 255)
 
-        strip.show()
-        time.sleep(0.04)
+            strip.show()
+            time.sleep(0.04)
 
-        blackout(strip, False)
+            blackout(strip, False)
 
-        strip.show()
-        time.sleep(0.01)
+            strip.show()
+            time.sleep(0.01)

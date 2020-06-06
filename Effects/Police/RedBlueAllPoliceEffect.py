@@ -25,28 +25,29 @@ import time
 from Effects.Util.EffectUtil import *
 
 
-def run(strip, loop_count=10):
-    for loop_count_loop in range(0, loop_count):
-        for i in range(0, LED_COUNT):
-            if i % 2 == 0:
-                strip[i] = (0, 0, 255)
-            else:
-                strip[i] = (0, 0, 0)
-        strip.show()
-        time.sleep(0.05)
+def run(strip, loop_count=2, flash_count=10):
+    for x in range(0, loop_count):
+        for y in range(0, flash_count):
+            for i in range(0, LED_COUNT):
+                if i % 2 == 0:
+                    strip[i] = (0, 0, 255)
+                else:
+                    strip[i] = (0, 0, 0)
+            strip.show()
+            time.sleep(0.05)
 
-        blackout(strip, True)
-        time.sleep(0.05)
+            blackout(strip, True)
+            time.sleep(0.05)
 
-    for loop_count_loop in range(0, loop_count):
-        for i in range(0, LED_COUNT):
-            if i % 2 != 0:
-                strip[i] = (0, 255, 0)
-            else:
-                strip[i] = (0, 0, 0)
+        for y in range(0, flash_count):
+            for i in range(0, LED_COUNT):
+                if i % 2 != 0:
+                    strip[i] = (0, 255, 0)
+                else:
+                    strip[i] = (0, 0, 0)
 
-        strip.show()
-        time.sleep(0.05)
+            strip.show()
+            time.sleep(0.05)
 
-        blackout(strip, True)
-        time.sleep(0.05)
+            blackout(strip, True)
+            time.sleep(0.05)
