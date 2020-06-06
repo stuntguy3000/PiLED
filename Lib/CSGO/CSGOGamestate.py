@@ -37,3 +37,4 @@ class GameStateClass:
         self.phase_countdowns = PhaseCountdowns()
         self.bomb = Bomb()
         self.round = Round()
+        self.previously = Previously()

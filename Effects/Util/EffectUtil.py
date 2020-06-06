@@ -48,6 +48,24 @@ def color_fade(strip, colorFrom, colorTo, wait_ms=5, steps=200):
         g += step_G
         b += step_B
 
+def color_fade_across_strip(strip, colorFrom, colorTo):
+    step_R = (colorTo[0] - colorFrom[0]) / LED_COUNT
+    step_G = (colorTo[1] - colorFrom[1]) / LED_COUNT
+    step_B = (colorTo[2] - colorFrom[2]) / LED_COUNT
+
+    r = int(colorFrom[0])
+    g = int(colorFrom[1])
+    b = int(colorFrom[2])
+
+    for i in range(LED_COUNT):
+        colour = (int(r), int(g), int(b))
+        strip[i] = colour
+
+        r += step_R
+        g += step_G
+        b += step_B
+
+    strip.show()
 
 def blackout(strip, apply=True):
     strip.fill((0, 0, 0))

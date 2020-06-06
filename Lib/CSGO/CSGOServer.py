@@ -27,37 +27,34 @@ SOFTWARE.
 '''
 
 import json
+
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from operator import attrgetter
 from threading import Thread
 
 from Lib.CSGO.CSGOGamestate import GameStateClass
 from Lib.CSGO.CSGOPayloadParser import PayloadParserClass
+from Lib.CSGO.CSGOEventProcessor import EventProcessorClass
 
 
 class GSIServer(HTTPServer):
     # stuntguy3000 - Add event handler callback function
-    def __init__(self, server_address, auth_token, event_handler):
+    def __init__(self, server_address, auth_token, instance):
         super(GSIServer, self).__init__(server_address, RequestHandler)
 
         self.auth_token = auth_token
         self.gamestate = GameStateClass()
         self.parser = PayloadParserClass()
+        self.events = EventProcessorClass(instance)
 
-        self.running = False
-        self.event_handler = event_handler
+        self.instance = instance
 
     def start_server(self):
         try:
             thread = Thread(target=self.serve_forever)
             thread.start()
-            print("Server started.")
-            # stuntguy3000 - Disabled first_time console printing
-            # first_time = True
-            # while self.running == False:
-            #    if first_time == True:
-            #        print("CS:GO GSI Server starting..")
-            #    first_time = False
+            # stuntguy3000 - Added prefix
+            print("[CSGOGSIServer] Server started.")
         except:
             # stuntguy3000 - Added prefix to error message and program halt
             print("[CSGOGSIServer] Could not start server.")
@@ -86,6 +83,8 @@ class GSIServer(HTTPServer):
 
 
 class RequestHandler(BaseHTTPRequestHandler):
+    current_effect_thread = None
+
     def do_POST(self):
         length = int(self.headers["Content-Length"])
         body = self.rfile.read(length).decode("utf-8")
@@ -100,12 +99,11 @@ class RequestHandler(BaseHTTPRequestHandler):
             self.server.running = True
 
         self.server.parser.parse_payload(payload, self.server.gamestate)
-
-        # stuntguy3000 - Call event handler
-        self.server.event_handler()
+        self.server.events.process_gamestate(self.server.gamestate)
 
     def authenticate_payload(self, payload):
         if "auth" in payload and "token" in payload["auth"]:
             return payload["auth"]["token"] == self.server.auth_token
         else:
             return False
+

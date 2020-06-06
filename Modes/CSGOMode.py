@@ -31,10 +31,8 @@ def set_instance(PiLED):
 
 
 def run():
-    gsi = CSGOGSIHandlerClass()
-    gsi.run(instance)
+    CSGOGSIHandlerClass.run(instance)
 
     # Keepalive
-    # TODO: Is this the best way to do this?
     while True:
         pass

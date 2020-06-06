@@ -20,22 +20,19 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Lib.CSGO.CSGOServer import GSIServer
-from Lib.CSGO.CSGOEventProcessor import EventProcessorClass
+import time
+
+from Effects.Util.EffectUtil import *
+from Lib.CSGO.CSGOColours import *
 
 
+def run(strip, delay_ms=100):
+    print("T WIN")
+    while True:
+        strip.fill(CSGO_COLOURS_TEAM_T)
+        strip.show()
+        time.sleep(delay_ms / 1000.0)
+        blackout(strip, strip)
+        time.sleep(delay_ms / 1000.0)
 
 
-
-class CSGOGSIHandlerClass:
-    @staticmethod
-    def run(PiLED):
-        SERVER_IP = ""
-        SERVER_PORT = 3000
-        GSI_KEY = "PiLED"
-
-        # Start GSI Server
-        print("[CSGOGSIHandler] Starting GSI Server on \"" + SERVER_IP + ":" + str(SERVER_PORT) + "\"")
-
-        server = GSIServer((SERVER_IP, SERVER_PORT), GSI_KEY, PiLED)
-        server.start_server()

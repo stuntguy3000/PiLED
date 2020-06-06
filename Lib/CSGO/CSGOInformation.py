@@ -166,3 +166,18 @@ class Round:
         self.phase = None
         self.win_team = None
         self.bomb = None
+
+
+"""
+Class to represent previous information
+"""
+
+
+class Previously:
+    """Class to store round information"""
+
+    def __init__(self):
+        self.provider = None
+        self.map = None
+        self.player = None
+        self.round = None
