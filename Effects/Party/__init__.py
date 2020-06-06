@@ -39,3 +39,7 @@ import Effects.Party.TriSplitSynchronizedRandomEffect
 import Effects.Party.FourSplitSynchronizedRandomStrobeEffect
 import Effects.Party.FourSplitSynchronizedRandomEffect
 import Effects.Party.FastRGBCycleStrobeEffect
+import Effects.Party.SplitFromMiddleToEndRandomColourEffect
+import Effects.Party.SplitFromMiddleToEndRandomColourStrobeEffect
+import Effects.Party.SplitFromEndToMiddleRandomColourEffect
+import Effects.Party.SplitFromEndToMiddleRandomColourStrobeEffect
