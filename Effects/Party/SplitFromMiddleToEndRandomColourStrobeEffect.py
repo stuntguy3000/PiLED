@@ -25,7 +25,7 @@ import time
 from Effects.Util.EffectUtil import *
 
 
-def run(strip, delay_ms=50, leds_per_segment=10, loop_count=5, flash_count=5):
+def run(strip, delay_ms=50, leds_per_segment=10, loop_count=10, flash_count=5):
     colour = None
 
     middle_led = int(LED_COUNT / 2)
