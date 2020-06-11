@@ -27,7 +27,6 @@ from Lib.CSGO.CSGOColours import *
 
 
 def run(strip, delay_ms=100):
-    print("CT WIN SPAWN")
     while True:
         strip.fill(CSGO_COLOURS_TEAM_CT)
         strip.show()

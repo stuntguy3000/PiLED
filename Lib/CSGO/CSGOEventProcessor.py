@@ -43,6 +43,7 @@ class EventProcessorClass:
 
     def process_gamestate(self, gamestate: GameStateClass):
         # Process menu state
+        print("Processing effect...")
 
         if gamestate.player.activity == "menu":
             if self.state_player_in_menu:

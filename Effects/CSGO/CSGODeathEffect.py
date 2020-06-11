@@ -27,5 +27,5 @@ from Lib.CSGO.CSGOColours import *
 def run(strip):
     strip.fill((0, 255, 0))
     strip.show()
-    color_fade(strip, (0, 255, 0), (0, 0, 0), steps=100, wait_ms=1)
+    color_fade(strip, (0, 255, 0), (0, 0, 0), steps=500, wait_ms=1)
     blackout(strip, True)

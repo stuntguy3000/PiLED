@@ -27,7 +27,6 @@ from Lib.CSGO.CSGOColours import *
 
 
 def run(strip, delay_ms=100):
-    print("T WIN")
     while True:
         strip.fill(CSGO_COLOURS_TEAM_T)
         strip.show()
