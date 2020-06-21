@@ -28,6 +28,8 @@ from Modes import NormalMode
 from Modes import PartyMode
 from Modes import PoliceMode
 from Modes import SingleColourMode
+from Modes import SleepMode
+from Modes import BlackoutMode
 
 instance = None
 current_mode_thread = None
@@ -39,7 +41,9 @@ class ModeHandlerClass:
         'PARTY': PartyMode,
         'SINGLE_COLOUR': SingleColourMode,
         'POLICE': PoliceMode,
-        'CSGO': CSGOMode
+        'CSGO': CSGOMode,
+        'SLEEP': SleepMode,
+        'BLACKOUT': BlackoutMode,
     }
 
     def init(self, PiLED):

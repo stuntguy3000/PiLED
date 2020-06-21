@@ -20,21 +20,10 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Effects.Generic import *
-from Modes.Util.ModeUtil import *
+import time
 
-instance = None
-effects = [RainbowCycleEffect, FullRainbowCycleEffect, RGBCycleEffect, RandomColourCycleEffect, DualSplitMovingColourEffect]
+from Effects.Util.EffectUtil import *
 
 
-def set_instance(PiLED):
-    global instance
-    instance = PiLED
-
-
-def run():
-    global instance
-    global effects
-
-    while True:
-        run_random_mode(effects, instance)
+def run(strip):
+    color_fade(strip, (255,255,255), (0,0,0), wait_ms=10, steps=600)

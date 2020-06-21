@@ -39,6 +39,10 @@ Various strobe and fast changing effects
 Provides LED effects for CS:GO using inbuilt GSI.
 
 
+### Sleep Mode
+Simple fade-out over time effect, triggered by a crontab at night!
+
+
 ## Activating Modes
 Send a GET request to the application on port `1337` with the URL path of `/mode/<name>`.
 

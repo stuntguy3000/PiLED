@@ -20,21 +20,4 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Effects.Generic import *
-from Modes.Util.ModeUtil import *
-
-instance = None
-effects = [RainbowCycleEffect, FullRainbowCycleEffect, RGBCycleEffect, RandomColourCycleEffect, DualSplitMovingColourEffect]
-
-
-def set_instance(PiLED):
-    global instance
-    instance = PiLED
-
-
-def run():
-    global instance
-    global effects
-
-    while True:
-        run_random_mode(effects, instance)
+import Effects.Blackout.BlackoutEffect

@@ -20,21 +20,16 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Effects.Generic import *
-from Modes.Util.ModeUtil import *
+import time
 
-instance = None
-effects = [RainbowCycleEffect, FullRainbowCycleEffect, RGBCycleEffect, RandomColourCycleEffect, DualSplitMovingColourEffect]
+from Effects.Util.EffectUtil import *
 
 
-def set_instance(PiLED):
-    global instance
-    instance = PiLED
+def run(strip):
+    colour = (150, 150, 150)
 
+    strip.fill(colour)
+    strip.show()
 
-def run():
-    global instance
-    global effects
-
-    while True:
-        run_random_mode(effects, instance)
+    # Fades the strip to black over 30 minutes (over 600 steps)
+    color_fade(strip, colour, (0, 0, 0), 3000, 600)
