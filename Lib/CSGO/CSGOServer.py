@@ -60,6 +60,7 @@ class GSIServer(HTTPServer):
             print("[CSGOGSIServer] Could not start server.")
             exit(1)
 
+    '''
     def get_info(self, target, *argv):
         try:
             # stuntguy3000 - Syntax errors are being thrown... replacing string format
@@ -80,6 +81,7 @@ class GSIServer(HTTPServer):
         except Exception as E:
             print(E)
             return False
+    '''
 
 
 class RequestHandler(BaseHTTPRequestHandler):
@@ -106,4 +108,3 @@ class RequestHandler(BaseHTTPRequestHandler):
             return payload["auth"]["token"] == self.server.auth_token
         else:
             return False
-

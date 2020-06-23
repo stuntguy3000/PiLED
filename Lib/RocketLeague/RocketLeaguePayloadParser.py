@@ -26,6 +26,7 @@ SOFTWARE.
 
 '''
 
+
 class PayloadParserClass:
     def parse_payload(self, payload, gamestate):
         for item in payload:

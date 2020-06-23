@@ -30,6 +30,7 @@ from Modes import PoliceMode
 from Modes import SingleColourMode
 from Modes import SleepMode
 from Modes import BlackoutMode
+from Modes import RocketLeagueMode
 
 instance = None
 current_mode_thread = None
@@ -42,6 +43,7 @@ class ModeHandlerClass:
         'SINGLE_COLOUR': SingleColourMode,
         'POLICE': PoliceMode,
         'CSGO': CSGOMode,
+        'ROCKETLEAGUE': RocketLeagueMode,
         'SLEEP': SleepMode,
         'BLACKOUT': BlackoutMode,
     }

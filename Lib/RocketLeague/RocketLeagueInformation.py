@@ -20,19 +20,44 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Lib.CSGO.CSGOServer import GSIServer
-from Lib.CSGO.CSGOEventProcessor import EventProcessorClass
+from typing import List
+import json
 
 
-class CSGOGSIHandlerClass:
-    @staticmethod
-    def run(PiLED):
-        SERVER_IP = ""
-        SERVER_PORT = 3000
-        GSI_KEY = "PiLED"
+class Game:
+    def __init__(self):
+        self.status = -1
 
-        # Start GSI Server
-        print("[CSGOGSIHandler] Starting GSI Server on \"" + SERVER_IP + ":" + str(SERVER_PORT) + "\"")
 
-        server = GSIServer((SERVER_IP, SERVER_PORT), GSI_KEY, PiLED)
-        server.start_server()
+class Match:
+    def __init__(self):
+        self.playlist = -1
+        self.time = -1
+        self.team_0 = None
+        self.team_1 = None
+
+"""
+class MatchTeam:
+    def __init__(self):
+        self.blue = 0
+        self.red = 0
+        self.green = 0
+        self.goals = 0
+        self.name = ""
+"""
+
+class Player:
+    def __init__(self):
+        self.assists = -1
+        self.boost = -1.0
+        self.goals = -1
+        self.saves = -1
+        self.score = -1
+        self.shots = -1
+        self.team = -1
+
+
+class Provider:
+    def __init__(self):
+        self.appid = None
+        self.name = None

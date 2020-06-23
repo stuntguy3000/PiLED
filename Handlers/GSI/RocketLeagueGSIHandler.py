@@ -20,5 +20,18 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-# TODO: Need to look into bakkesmod creation to do this.
-#       Soon™
+from Lib.RocketLeague.RocketLeagueServer import GSIServer
+from Lib.RocketLeague.RocketLeagueEventProcessor import EventProcessorClass
+
+
+class RocketLeagueGSIHandlerClass:
+    @staticmethod
+    def run(PiLED):
+        SERVER_IP = ""
+        SERVER_PORT = 3000
+
+        # Start GSI Server
+        print("[RocketLeagueGSIHandler] Starting GSI Server on \"" + SERVER_IP + ":" + str(SERVER_PORT) + "\"")
+
+        server = GSIServer((SERVER_IP, SERVER_PORT), PiLED)
+        server.start_server()

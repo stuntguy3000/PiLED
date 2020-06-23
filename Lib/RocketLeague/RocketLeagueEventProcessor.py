@@ -20,19 +20,26 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Lib.CSGO.CSGOServer import GSIServer
-from Lib.CSGO.CSGOEventProcessor import EventProcessorClass
+from Lib.RocketLeague.RocketLeagueGamestate import GameStateClass
 
+# from Effects.RocketLeague import *
+from Modes.Util.ModeUtil import *
 
-class CSGOGSIHandlerClass:
-    @staticmethod
-    def run(PiLED):
-        SERVER_IP = ""
-        SERVER_PORT = 3000
-        GSI_KEY = "PiLED"
+import multiprocessing
 
-        # Start GSI Server
-        print("[CSGOGSIHandler] Starting GSI Server on \"" + SERVER_IP + ":" + str(SERVER_PORT) + "\"")
+class EventProcessorClass:
+    instance = None
+    current_effect_thread = None
 
-        server = GSIServer((SERVER_IP, SERVER_PORT), GSI_KEY, PiLED)
-        server.start_server()
+    def __init__(self, instance):
+        self.instance = instance
+
+    def process_gamestate(self, gamestate: GameStateClass):
+        # Process menu state
+        print("Processing effect...")
+        team0 = gamestate.match.team_0
+        team1 = gamestate.match.team_1
+
+        if team0 is not None:
+            print("Team 0: " + str(gamestate.match.team_0["goals"]))
+            print("Team 1: " + str(gamestate.match.team_1["goals"]))

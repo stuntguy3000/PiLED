@@ -20,19 +20,3 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Lib.CSGO.CSGOServer import GSIServer
-from Lib.CSGO.CSGOEventProcessor import EventProcessorClass
-
-
-class CSGOGSIHandlerClass:
-    @staticmethod
-    def run(PiLED):
-        SERVER_IP = ""
-        SERVER_PORT = 3000
-        GSI_KEY = "PiLED"
-
-        # Start GSI Server
-        print("[CSGOGSIHandler] Starting GSI Server on \"" + SERVER_IP + ":" + str(SERVER_PORT) + "\"")
-
-        server = GSIServer((SERVER_IP, SERVER_PORT), GSI_KEY, PiLED)
-        server.start_server()
