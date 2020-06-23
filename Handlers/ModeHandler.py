@@ -28,7 +28,8 @@ from Modes import NormalMode
 from Modes import PartyMode
 from Modes import PoliceMode
 from Modes import SingleColourMode
-from Modes import SleepMode
+from Modes import SlowFadeOutMode
+from Modes import SlowFadeIn
 from Modes import BlackoutMode
 from Modes import RocketLeagueMode
 
@@ -44,8 +45,9 @@ class ModeHandlerClass:
         'POLICE': PoliceMode,
         'CSGO': CSGOMode,
         'ROCKETLEAGUE': RocketLeagueMode,
-        'SLEEP': SleepMode,
         'BLACKOUT': BlackoutMode,
+        'SLOWFADEOUT': SlowFadeOutMode,
+        'SLOWFADEIN': SlowFadeIn,
     }
 
     def init(self, PiLED):

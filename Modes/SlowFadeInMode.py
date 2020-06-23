@@ -20,4 +20,18 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import Effects.Sleep.SleepFadeOutEffect
+from Effects.SlowFade import *
+from Modes.Util.ModeUtil import *
+
+instance = None
+
+
+def set_instance(PiLED):
+    global instance
+    instance = PiLED
+
+
+def run():
+    global instance
+
+    run_mode(SlowFadeInEffect, instance)
