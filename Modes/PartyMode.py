@@ -33,10 +33,11 @@ effects = [FullRainbowCycleStrobeEffect, FastRGBCycleStrobeEffect, SingleRandomC
            FourSplitRandomEffect, FourSplitRandomStrobeEffect,
            FourSplitSynchronizedRandomEffect, FourSplitSynchronizedRandomStrobeEffect,
            DualSplitMovingRandomEffect,
-           TenSplitFromMiddleToEndRandomColourEffect, TenSplitFromMiddleToEndRandomColourStrobeEffect,
-           TenSplitFromEndToMiddleRandomColourEffect, TenSplitFromEndToMiddleRandomColourStrobeEffect,
-           TenSplitFromMiddleToEndRandomLoopColourEffect, TenSplitFromMiddleToEndRandomLoopColourStrobeEffect,
-           TenSplitFromEndToMiddleRandomLoopColourEffect, TenSplitFromEndToMiddleRandomLoopColourStrobeEffect]
+           TenSplitMiddleToEndRandomColourEffect, TenSplitMiddleToEndRandomColourStrobeEffect,
+           TenSplitEndToMiddleRandomColourEffect, TenSplitEndToMiddleRandomColourStrobeEffect,
+           TenSplitMiddleToEndRandomLoopColourEffect, TenSplitMiddleToEndRandomLoopColourStrobeEffect,
+           TenSplitEndToMiddleRandomLoopColourEffect, TenSplitEndToMiddleRandomLoopColourStrobeEffect,
+           TenSplitStartToEndRandomLoopColourEffect, TenSplitStartToEndRandomColourEffect]
 
 
 def set_instance(PiLED):
@@ -49,5 +50,7 @@ def run():
     global effects
 
     while True:
+        run_mode(TenSplitStartToEndRandomLoopColourEffect, instance)
+        run_mode(TenSplitStartToEndRandomColourEffect, instance)
         run_random_mode(effects, instance)
 
