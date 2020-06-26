@@ -50,7 +50,5 @@ def run():
     global effects
 
     while True:
-        run_mode(TenSplitStartToEndRandomLoopColourEffect, instance)
-        run_mode(TenSplitStartToEndRandomColourEffect, instance)
         run_random_mode(effects, instance)
 
