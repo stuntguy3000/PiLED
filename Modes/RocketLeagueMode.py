@@ -22,6 +22,9 @@
 
 from Handlers.GSI.RocketLeagueGSIHandler import RocketLeagueGSIHandlerClass
 
+from Modes.Util.ModeUtil import *
+from Effects.RocketLeague import *
+
 instance = None
 
 
@@ -31,6 +34,9 @@ def set_instance(PiLED):
 
 
 def run():
+    global instance
+    #run_mode(RocketLeagueMenuEffect, instance)
+
     RocketLeagueGSIHandlerClass.run(instance)
 
     # Keepalive

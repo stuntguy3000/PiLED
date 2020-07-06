@@ -20,20 +20,17 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Handlers.GSI.CSGOGSIHandler import CSGOGSIHandlerClass
+import time
+
 from Effects.Util.EffectUtil import *
-
-instance = None
-
-
-def set_instance(PiLED):
-    global instance
-    instance = PiLED
+from Lib.RocketLeague.RocketLeagueColours import *
 
 
-def run():
-    CSGOGSIHandlerClass.run(instance)
-
-    # Keepalive
+def run(strip, delay_ms=100):
     while True:
-        pass
+        strip.fill(RL_COLOURS_TEAM_ORANGE)
+        strip.show()
+        time.sleep(delay_ms / 1000.0)
+        blackout(strip, strip)
+        time.sleep(delay_ms / 1000.0)
+
