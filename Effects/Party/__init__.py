@@ -23,6 +23,9 @@
 import Effects.Party.FullRainbowCycleStrobeEffect
 import Effects.Party.SingleRandomColourEffect
 import Effects.Party.SingleRandomColourStrobeEffect
+import Effects.Party.SingleRandomColourMultiStrobeEffect
+import Effects.Party.SingleRandomColourSlowStrobeEffect
+import Effects.Party.SingleRandomColourSlowMultiStrobeEffect
 import Effects.Party.DualAlternatingPixelRandomEffect
 import Effects.Party.DualAlternatingPixelRandomStrobeEffect
 import Effects.Party.DualSplitRandomEffect
