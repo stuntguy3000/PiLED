@@ -20,22 +20,34 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Effects.Police import *
-from Modes.Util.ModeUtil import *
+import time
 
-instance = None
-
-
-def set_instance(PiLED):
-    global instance
-    instance = PiLED
+from Effects.Util.EffectUtil import *
 
 
-def run():
-    global instance
+def run(strip, loop_count=4, flash_count=10):
+    for x in range(0, loop_count):
+        for y in range(0, flash_count):
+            for i in range(0, LED_COUNT):
+                if i % 2 == 0:
+                    strip[i] = (0, 0, 255)
+                else:
+                    strip[i] = (0, 0, 0)
+            strip.show()
+            time.sleep(0.05)
 
-    while True:
-        run_mode(LightbarPoliceEffect, instance)
-        run_mode(RedBlueAlternatingPoliceEffect, instance)
-        run_mode(RedBlueSplitPoliceEffect, instance)
-        run_mode(RedBlueAlternatingShiftingPoliceEffect, instance)
+            blackout(strip, True)
+            time.sleep(0.05)
+
+        for y in range(0, flash_count):
+            for i in range(0, LED_COUNT):
+                if i % 2 != 0:
+                    strip[i] = (0, 255, 0)
+                else:
+                    strip[i] = (0, 0, 0)
+
+            strip.show()
+            time.sleep(0.05)
+
+            blackout(strip, True)
+            time.sleep(0.05)

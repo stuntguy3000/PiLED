@@ -20,22 +20,3 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Effects.Police import *
-from Modes.Util.ModeUtil import *
-
-instance = None
-
-
-def set_instance(PiLED):
-    global instance
-    instance = PiLED
-
-
-def run():
-    global instance
-
-    while True:
-        run_mode(LightbarPoliceEffect, instance)
-        run_mode(RedBlueAlternatingPoliceEffect, instance)
-        run_mode(RedBlueSplitPoliceEffect, instance)
-        run_mode(RedBlueAlternatingShiftingPoliceEffect, instance)

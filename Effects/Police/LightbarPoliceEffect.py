@@ -25,7 +25,7 @@ import time
 from Effects.Util.EffectUtil import *
 
 
-def run(strip, loop_count=2, flash_count=10):
+def run(strip, loop_count=4, flash_count=10):
     for x in range(0, loop_count):
         for y in range(0, flash_count):
             for i in range(0, 39):

@@ -1,4 +1,4 @@
-#  The MIT License
+255, 0#  The MIT License
 #
 #  Copyright (c) 2020 Luke Anderson (stuntguy3000)
 #
@@ -24,37 +24,38 @@ import time
 
 
 def run(strip):
-    for loop_count in range(0, 10):
-        for i in range(0, 59):
-            strip[i] = (0, 0, 255)
-        for i in range(59, 119):
-            strip[i] = (0, 0, 0)
+    for flash_count in range(0, 4):
+        for loop_count in range(0, 10):
+            for i in range(0, 59):
+                strip[i] = (0, 0, 255)
+            for i in range(59, 119):
+                strip[i] = (0, 0, 0)
 
-        strip.show()
-        time.sleep(0.05)
+            strip.show()
+            time.sleep(0.05)
 
-        for i in range(0, 59):
-            strip[i] = (0, 0, 0)
-        for i in range(59, 119):
-            strip[i] = (0, 255, 0)
+            for i in range(0, 59):
+                strip[i] = (0, 0, 0)
+            for i in range(59, 119):
+                strip[i] = (0, 255, 0)
 
-        strip.show()
-        time.sleep(0.05)
+            strip.show()
+            time.sleep(0.05)
 
-    for loop_count in range(0, 10):
-        for i in range(0, 59):
-            strip[i] = (0, 255, 0)
-        for i in range(59, 119):
-            strip[i] = (0, 0, 0)
+        for loop_count in range(0, 10):
+            for i in range(0, 59):
+                strip[i] = (0, 255, 0)
+            for i in range(59, 119):
+                strip[i] = (0, 0, 0)
 
-        strip.show()
-        time.sleep(0.05)
+            strip.show()
+            time.sleep(0.05)
 
-        for i in range(0, 59):
-            strip[i] = (0, 0, 0)
+            for i in range(0, 59):
+                strip[i] = (0, 0, 0)
 
-        for i in range(59, 119):
-            strip[i] = (0, 0, 255)
+            for i in range(59, 119):
+                strip[i] = (0, 0, 255)
 
-        strip.show()
-        time.sleep(0.05)
+            strip.show()
+            time.sleep(0.05)

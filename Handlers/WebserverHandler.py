@@ -26,7 +26,6 @@ import socketserver
 
 instance = None
 
-
 class WebserverHandlerClass():
     WEBSERVER_HOST = "LukePi"
     WEBSERVER_PORT = 1337
@@ -47,6 +46,7 @@ class WebserverHandlerClass():
 
 class WebserverResponseHandlerClass(http.server.SimpleHTTPRequestHandler):
     REGEX_MODE = "/mode/([A-z]+)"
+    REGEX_MODELIST = "/modelist"
 
     def log_message(self, format, *args):
         pass
@@ -65,9 +65,20 @@ class WebserverResponseHandlerClass(http.server.SimpleHTTPRequestHandler):
             if result:
                 self.send_response(200)
                 self.send_header("Content-type", "text/html")
-                self.send_header("Content-length", "0")
                 self.end_headers()
+
+                self.wfile.write(("Changing into mode " + str(mode_request_regex.group(1)) + ".").encode("utf-8"))
             else:
                 self.send_error(404, "Mode not found.")
 
             return
+
+        mode_list_request_regex = re.match(self.REGEX_MODELIST, self.path)
+        # Is it a mode list request?
+        if mode_list_request_regex is not None:
+            self.send_response(200)
+            self.send_header("Content-type", "text/html")
+            self.end_headers()
+
+            # todo
+            # make work

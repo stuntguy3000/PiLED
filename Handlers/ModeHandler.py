@@ -32,6 +32,7 @@ from Modes import SlowFadeOutMode
 from Modes import SlowFadeInMode
 from Modes import BlackoutMode
 from Modes import RocketLeagueMode
+from Modes import SingleFlashMode
 
 instance = None
 current_mode_thread = None
@@ -42,6 +43,7 @@ class ModeHandlerClass:
         'NORMAL': NormalMode,
         'PARTY': PartyMode,
         'SINGLE_COLOUR': SingleColourMode,
+        'SINGLE_FLASH': SingleFlashMode,
         'POLICE': PoliceMode,
         'CSGO': CSGOMode,
         'ROCKETLEAGUE': RocketLeagueMode,
