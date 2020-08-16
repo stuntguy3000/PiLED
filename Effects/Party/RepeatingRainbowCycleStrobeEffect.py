@@ -25,7 +25,7 @@ import time
 from Effects.Util.EffectUtil import *
 
 
-def run(strip, delay_ms=100, loop_count=10 * 255, base_modifier_increment=150):
+def run(strip, delay_ms=100, loop_count=2 * 255, base_modifier_increment=150):
     """ Slowly rotate though a across 5 pixels, repeated across the entire strip """
 
     base_modifier = 0
