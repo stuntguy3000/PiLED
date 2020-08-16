@@ -28,7 +28,7 @@ from Effects.Util.EffectUtil import *
 def run(strip):
     colour = (150, 150, 150)
 
-    strip.fill(colour)
+    strip.fill((0, 0, 0))
     strip.show()
 
     # Fades the strip in over 30 minutes (over 600 steps)
