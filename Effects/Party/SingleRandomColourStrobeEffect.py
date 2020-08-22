@@ -25,7 +25,7 @@ import time
 from Effects.Util.EffectUtil import *
 
 
-def run(strip, delay_ms=50, loop_count=50):
+def run(strip, delay_ms=50, loop_count=100):
     colour = None
 
     for j in range(0, loop_count):
