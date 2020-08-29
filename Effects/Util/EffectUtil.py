@@ -89,15 +89,17 @@ def wheel(position):
 
 
 def get_random_colour(*previous_colours_list):
-    colours = [(0, 0, 0) for i in range(7)]
+    colours = [(0, 0, 0) for i in range(8)]
 
-    colours[0] = (255, 0, 0)
-    colours[1] = (0, 255, 0)
-    colours[2] = (0, 0, 255)
-    colours[3] = (255, 255, 0)
-    colours[4] = (0, 255, 255)
-    colours[5] = (255, 0, 255)
-    colours[6] = (255, 255, 255)
+    # G R B
+    colours[0] = (255, 0, 0)  # Green
+    colours[1] = (0, 255, 0)  # Red
+    colours[2] = (0, 0, 255)  # Blue
+    colours[3] = (255, 255, 0)  # Yellow
+    colours[4] = (0, 255, 255)  # Pink
+    colours[5] = (255, 0, 255)  # Aqua
+    colours[6] = (100, 255, 0)  # Orange
+    colours[7] = (255, 255, 255)  # White
 
     # Todo: UGLY AF
     # Someone else can fix it
