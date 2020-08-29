@@ -20,7 +20,7 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import Effects.Party.FullRainbowCycleStrobeEffect
+import Effects.Party.SingleRainbowCycleStrobeEffect
 import Effects.Party.SingleRandomColourEffect
 import Effects.Party.SingleRandomColourStrobeEffect
 import Effects.Party.SingleRandomColourMultiStrobeEffect
@@ -41,7 +41,7 @@ import Effects.Party.TriSplitSynchronizedRandomStrobeEffect
 import Effects.Party.TriSplitSynchronizedRandomEffect
 import Effects.Party.FourSplitSynchronizedRandomStrobeEffect
 import Effects.Party.FourSplitSynchronizedRandomEffect
-import Effects.Party.FastRGBCycleStrobeEffect
+import Effects.Party.SingleRGBCycleStrobeEffect
 import Effects.Party.TenSplitMiddleToEndRandomColourEffect
 import Effects.Party.TenSplitMiddleToEndRandomColourStrobeEffect
 import Effects.Party.TenSplitEndToMiddleRandomColourEffect
@@ -52,4 +52,4 @@ import Effects.Party.TenSplitEndToMiddleRandomLoopColourEffect
 import Effects.Party.TenSplitEndToMiddleRandomLoopColourStrobeEffect
 import Effects.Party.TenSplitStartToEndRandomColourEffect
 import Effects.Party.TenSplitStartToEndRandomLoopColourEffect
-import Effects.Party.RepeatingRainbowCycleStrobeEffect
+import Effects.Party.MultipleRainbowCycleStrobeEffect
