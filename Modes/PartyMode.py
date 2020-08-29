@@ -39,7 +39,8 @@ effects = [SingleRainbowCycleStrobeEffect, SingleRGBCycleStrobeEffect, MultipleR
            TenSplitEndToMiddleRandomColourEffect, TenSplitEndToMiddleRandomColourStrobeEffect,
            TenSplitMiddleToEndRandomLoopColourEffect, TenSplitMiddleToEndRandomLoopColourStrobeEffect,
            TenSplitEndToMiddleRandomLoopColourEffect, TenSplitEndToMiddleRandomLoopColourStrobeEffect,
-           TenSplitStartToEndRandomLoopColourEffect, TenSplitStartToEndRandomColourEffect]
+           TenSplitStartToEndRandomLoopColourEffect, TenSplitStartToEndRandomColourEffect,
+           SingleRandomColourFastFadeOutEffect]
 
 
 def set_instance(PiLED):
@@ -53,4 +54,3 @@ def run():
 
     while True:
         run_random_mode(effects, instance)
-

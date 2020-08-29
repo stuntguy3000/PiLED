@@ -53,3 +53,4 @@ import Effects.Party.TenSplitEndToMiddleRandomLoopColourStrobeEffect
 import Effects.Party.TenSplitStartToEndRandomColourEffect
 import Effects.Party.TenSplitStartToEndRandomLoopColourEffect
 import Effects.Party.MultipleRainbowCycleStrobeEffect
+import Effects.Party.SingleRandomColourFastFadeOutEffect
