@@ -26,4 +26,3 @@ from Lib.RocketLeague.RocketLeagueColours import *
 
 def run(strip):
     color_fade_across_strip(strip, RL_COLOURS_TEAM_ORANGE, RL_COLOURS_TEAM_BLUE)
-

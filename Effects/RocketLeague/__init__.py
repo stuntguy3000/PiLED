@@ -20,8 +20,8 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import Effects.RocketLeague.RocketLeagueMenuEffect
 import Effects.RocketLeague.RocketLeagueBlueTeamEffect
-import Effects.RocketLeague.RocketLeagueOrangeTeamEffect
 import Effects.RocketLeague.RocketLeagueBlueTeamGoalEffect
+import Effects.RocketLeague.RocketLeagueMenuEffect
+import Effects.RocketLeague.RocketLeagueOrangeTeamEffect
 import Effects.RocketLeague.RocketLeagueOrangeTeamGoalEffect

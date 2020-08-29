@@ -20,12 +20,12 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Lib.CSGO.CSGOGamestate import GameStateClass
+import multiprocessing
 
 from Effects.CSGO import *
+from Lib.CSGO.CSGOGamestate import GameStateClass
 from Modes.Util.ModeUtil import *
 
-import multiprocessing
 
 class EventProcessorClass:
     state_player_in_menu = False

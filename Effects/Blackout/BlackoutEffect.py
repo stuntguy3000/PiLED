@@ -20,10 +20,8 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import time
-
 from Effects.Util.EffectUtil import *
 
 
 def run(strip):
-    color_fade(strip, (255,255,255), (0,0,0), wait_ms=10, steps=600)
+    color_fade(strip, (255, 255, 255), (0, 0, 0), wait_ms=10, steps=600)

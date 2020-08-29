@@ -21,7 +21,6 @@
 #  THE SOFTWARE.
 
 from Effects.Util.EffectUtil import *
-from Lib.CSGO.CSGOColours import *
 
 
 def run(strip):

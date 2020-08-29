@@ -20,11 +20,9 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Effects.Util.EffectUtil import *
 from Lib.RocketLeague.RocketLeagueColours import *
 
 
 def run(strip):
     strip.fill(RL_COLOURS_TEAM_ORANGE)
     strip.show()
-

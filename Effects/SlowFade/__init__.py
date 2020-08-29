@@ -20,5 +20,5 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import Effects.SlowFade.SlowFadeOutEffect
 import Effects.SlowFade.SlowFadeInEffect
+import Effects.SlowFade.SlowFadeOutEffect

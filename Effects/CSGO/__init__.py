@@ -20,9 +20,9 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
+import Effects.CSGO.CSGODeathEffect
 import Effects.CSGO.CSGOMenuEffect
 import Effects.CSGO.CSGOTeamCTEffect
-import Effects.CSGO.CSGOTeamTEffect
 import Effects.CSGO.CSGOTeamCTWinEffect
+import Effects.CSGO.CSGOTeamTEffect
 import Effects.CSGO.CSGOTeamTWinEffect
-import Effects.CSGO.CSGODeathEffect

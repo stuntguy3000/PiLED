@@ -21,7 +21,6 @@
 #  THE SOFTWARE.
 
 from Handlers.GSI.CSGOGSIHandler import CSGOGSIHandlerClass
-from Effects.Util.EffectUtil import *
 
 instance = None
 

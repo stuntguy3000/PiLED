@@ -21,7 +21,6 @@
 #  THE SOFTWARE.
 
 from Lib.RocketLeague.RocketLeagueServer import GSIServer
-from Lib.RocketLeague.RocketLeagueEventProcessor import EventProcessorClass
 
 
 class RocketLeagueGSIHandlerClass:

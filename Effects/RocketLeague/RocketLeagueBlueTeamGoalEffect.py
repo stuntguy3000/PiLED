@@ -20,8 +20,6 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import time
-
 from Effects.Util.EffectUtil import *
 from Lib.RocketLeague.RocketLeagueColours import *
 
@@ -33,4 +31,3 @@ def run(strip, delay_ms=100):
         time.sleep(delay_ms / 1000.0)
         blackout(strip, strip)
         time.sleep(delay_ms / 1000.0)
-

@@ -1,4 +1,4 @@
-255, 0#  The MIT License
+255, 0  # The MIT License
 #
 #  Copyright (c) 2020 Luke Anderson (stuntguy3000)
 #

@@ -20,9 +20,6 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from typing import List
-import json
-
 
 class Game:
     def __init__(self):
@@ -36,6 +33,7 @@ class Match:
         self.team_0 = None
         self.team_1 = None
 
+
 """
 class MatchTeam:
     def __init__(self):
@@ -45,6 +43,7 @@ class MatchTeam:
         self.goals = 0
         self.name = ""
 """
+
 
 class Player:
     def __init__(self):

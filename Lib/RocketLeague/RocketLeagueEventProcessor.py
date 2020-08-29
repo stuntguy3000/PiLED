@@ -20,12 +20,12 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Lib.RocketLeague.RocketLeagueGamestate import GameStateClass
+import multiprocessing
 
 from Effects.RocketLeague import *
+from Lib.RocketLeague.RocketLeagueGamestate import GameStateClass
 from Modes.Util.ModeUtil import *
 
-import multiprocessing
 
 class EventProcessorClass:
     instance = None
@@ -88,7 +88,7 @@ class EventProcessorClass:
                 # Test if a goal has been scored
                 print("Goals: " + str(gamestate.match.team_0["goals"]) +
                       " (" + str(self.goals_teamblue) + ") "
-                         + str(gamestate.match.team_1["goals"])
+                      + str(gamestate.match.team_1["goals"])
                       + " (" + str(self.goals_teamorange) + ") ")
 
                 if gamestate.match.team_0["goals"] > self.goals_teamblue:

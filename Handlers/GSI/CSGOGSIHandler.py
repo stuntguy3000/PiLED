@@ -21,7 +21,6 @@
 #  THE SOFTWARE.
 
 from Lib.CSGO.CSGOServer import GSIServer
-from Lib.CSGO.CSGOEventProcessor import EventProcessorClass
 
 
 class CSGOGSIHandlerClass:

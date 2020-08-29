@@ -21,14 +21,13 @@
 #  THE SOFTWARE.
 
 import json
-
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from operator import attrgetter
 from threading import Thread
 
+from Lib.RocketLeague.RocketLeagueEventProcessor import EventProcessorClass
 from Lib.RocketLeague.RocketLeagueGamestate import GameStateClass
 from Lib.RocketLeague.RocketLeaguePayloadParser import PayloadParserClass
-from Lib.RocketLeague.RocketLeagueEventProcessor import EventProcessorClass
+
 
 class GSIServer(HTTPServer):
     def __init__(self, server_address, instance):

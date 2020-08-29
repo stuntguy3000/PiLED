@@ -20,8 +20,6 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import time
-
 from Effects.Util.EffectUtil import *
 
 
@@ -38,10 +36,10 @@ def run(strip, loop_count=6):
 
         for y in range(0, loop_count):
             for modifier in range(0, LED_COUNT, 6):
-                for i in range(0, LED_COUNT//2):
+                for i in range(0, LED_COUNT // 2):
                     strip[get_index_with_modifier(i, modifier)] = colour1
 
-                for i in range(LED_COUNT//2, LED_COUNT):
+                for i in range(LED_COUNT // 2, LED_COUNT):
                     strip[get_index_with_modifier(i, modifier)] = colour2
 
                 strip.show()

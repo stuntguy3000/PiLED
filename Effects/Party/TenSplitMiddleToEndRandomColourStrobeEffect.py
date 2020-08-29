@@ -20,8 +20,6 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-import time
-
 from Effects.Util.EffectUtil import *
 
 
@@ -32,7 +30,7 @@ def run(strip, delay_ms=50, leds_per_segment=10, loop_count=10, flash_count=5):
     start_led = int(middle_led - leds_per_segment / 2)
 
     for x in range(0, loop_count):
-         for y in range(0, flash_count):
+        for y in range(0, flash_count):
             current_start_led = start_led
             led_loop_count = 0
 

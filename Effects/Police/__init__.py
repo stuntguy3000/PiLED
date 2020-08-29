@@ -20,7 +20,7 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
+import Effects.Police.LightbarPoliceEffect
 import Effects.Police.RedBlueAlternatingPoliceEffect
 import Effects.Police.RedBlueAlternatingShiftingPoliceEffect
 import Effects.Police.RedBlueSplitPoliceEffect
-import Effects.Police.LightbarPoliceEffect

@@ -27,14 +27,12 @@ SOFTWARE.
 '''
 
 import json
-
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from operator import attrgetter
 from threading import Thread
 
+from Lib.CSGO.CSGOEventProcessor import EventProcessorClass
 from Lib.CSGO.CSGOGamestate import GameStateClass
 from Lib.CSGO.CSGOPayloadParser import PayloadParserClass
-from Lib.CSGO.CSGOEventProcessor import EventProcessorClass
 
 
 class GSIServer(HTTPServer):

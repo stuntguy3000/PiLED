@@ -23,16 +23,16 @@
 # import traceback
 import multiprocessing
 
+from Modes import BlackoutMode
 from Modes import CSGOMode
 from Modes import NormalMode
 from Modes import PartyMode
 from Modes import PoliceMode
-from Modes import SingleColourMode
-from Modes import SlowFadeOutMode
-from Modes import SlowFadeInMode
-from Modes import BlackoutMode
 from Modes import RocketLeagueMode
+from Modes import SingleColourMode
 from Modes import SingleFlashMode
+from Modes import SlowFadeInMode
+from Modes import SlowFadeOutMode
 
 instance = None
 current_mode_thread = None

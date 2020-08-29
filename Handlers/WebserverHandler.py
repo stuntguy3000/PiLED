@@ -26,6 +26,7 @@ import socketserver
 
 instance = None
 
+
 class WebserverHandlerClass():
     WEBSERVER_HOST = "LukePi"
     WEBSERVER_PORT = 1337
