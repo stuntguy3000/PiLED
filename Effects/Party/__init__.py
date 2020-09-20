@@ -36,6 +36,7 @@ import Effects.Party.SingleRGBCycleStrobeEffect
 import Effects.Party.SingleRainbowCycleStrobeEffect
 import Effects.Party.SingleRandomColourEffect
 import Effects.Party.SingleRandomColourFastFadeOutEffect
+import Effects.Party.SingleRandomColourFastFadeInEffect
 import Effects.Party.SingleRandomColourMultiStrobeEffect
 import Effects.Party.SingleRandomColourSlowMultiStrobeEffect
 import Effects.Party.SingleRandomColourSlowStrobeEffect

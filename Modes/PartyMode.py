@@ -40,7 +40,7 @@ effects = [SingleRainbowCycleStrobeEffect, SingleRGBCycleStrobeEffect, MultipleR
            TenSplitMiddleToEndRandomLoopColourEffect, TenSplitMiddleToEndRandomLoopColourStrobeEffect,
            TenSplitEndToMiddleRandomLoopColourEffect, TenSplitEndToMiddleRandomLoopColourStrobeEffect,
            TenSplitStartToEndRandomLoopColourEffect, TenSplitStartToEndRandomColourEffect,
-           SingleRandomColourFastFadeOutEffect]
+           SingleRandomColourFastFadeOutEffect, SingleRandomColourFastFadeInEffect]
 
 
 def set_instance(PiLED):
