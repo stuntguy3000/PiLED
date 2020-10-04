@@ -33,6 +33,7 @@ from Modes import SingleColourMode
 from Modes import SingleFlashMode
 from Modes import SlowFadeInMode
 from Modes import SlowFadeOutMode
+from Modes import FireMode
 
 instance = None
 current_mode_thread = None
@@ -50,6 +51,7 @@ class ModeHandlerClass:
         'BLACKOUT': BlackoutMode,
         'SLOWFADEOUT': SlowFadeOutMode,
         'SLOWFADEIN': SlowFadeInMode,
+        'FIRE': FireMode,
     }
 
     def init(self, PiLED):
