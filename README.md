@@ -76,6 +76,9 @@ Used to strobe a single colour for a very short amount of time, like a 'tap' but
 ### SlowFade
 Contains a collection of slow fade in and slow fade out effects: Note, these are triggered by `SlowFadeIn` and by `SlowFadeOut` as required.
 
+### Fire
+Emulates a fireplace (vertically). Added by [@bitbrain-za](https://github.com/bitbrain-za/PiLED).
+
 
 ## Activating Modes
 Send a GET request to the application on port `1337` with the URL path of `/mode/<name>`.
