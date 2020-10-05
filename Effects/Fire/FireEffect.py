@@ -49,13 +49,14 @@ def run(strip, cooling = 55, sparking = 80, delay = 0.02):
 
             heatramp = t192 & 0x3F
             heatramp <<= 2
-        
+
+            # G R B
             if( t192 > 0x80):
                 strip[i] = (255, 255, heatramp)
             elif( t192 > 0x40 ):
-                strip[i] = (255, heatramp, 0)
+                strip[i] = (heatramp, 255, 0)
             else:
-                strip[i] = (heatramp, 0, 0)
+                strip[i] = (0, heatramp, 0)
 
         strip.show()
         time.sleep(delay)

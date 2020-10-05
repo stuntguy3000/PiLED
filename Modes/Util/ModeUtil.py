@@ -30,5 +30,4 @@ def run_mode(mode_class, instance):
 
 def run_random_mode(mode_list, instance):
     randomNumber = random.randint(1, len(mode_list))
-
     run_mode(mode_list[randomNumber - 1], instance)
