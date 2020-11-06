@@ -34,6 +34,8 @@ from Modes import SingleFlashMode
 from Modes import SlowFadeInMode
 from Modes import SlowFadeOutMode
 from Modes import FireMode
+from Modes import USElectionMode
+from Modes import USElectionAlertMode
 
 instance = None
 current_mode_thread = None
@@ -52,6 +54,8 @@ class ModeHandlerClass:
         'SLOWFADEOUT': SlowFadeOutMode,
         'SLOWFADEIN': SlowFadeInMode,
         'FIRE': FireMode,
+        'USELECTION': USElectionMode,
+        'USELECTIONALERT': USElectionAlertMode,
     }
 
     def init(self, PiLED):
