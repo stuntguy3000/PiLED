@@ -24,6 +24,7 @@
 import multiprocessing
 
 from Modes import BlackoutMode
+from Modes import OffMode
 from Modes import CSGOMode
 from Modes import NormalMode
 from Modes import PartyMode
@@ -51,6 +52,7 @@ class ModeHandlerClass:
         'CSGO': CSGOMode,
         'ROCKETLEAGUE': RocketLeagueMode,
         'BLACKOUT': BlackoutMode,
+        'OFF': OffMode,
         'SLOWFADEOUT': SlowFadeOutMode,
         'SLOWFADEIN': SlowFadeInMode,
         'FIRE': FireMode,
@@ -65,7 +67,7 @@ class ModeHandlerClass:
         global instance
         instance = PiLED
 
-        self.run_mode("NORMAL")
+        self.run_mode("OFF")
 
     def run_mode(self, mode_name):
         mode_name = str.upper(mode_name)
