@@ -45,5 +45,4 @@ from Effects.Util.SegmentUtil import *
 
 
 def run(strip, colour=None):
-    cycle_through_segments(strip, get_segments(5, SegmentOrder.FIRST_TO_LAST, True, False), 0.5, (255, 0, 255))
-    cycle_through_segments(strip, get_segments(5, SegmentOrder.LAST_TO_FIRST, False, True), 0.5, (255, 255, 0))
+    display_segments(strip, get_segments(20, SegmentOrder.RANDOM), 0.1, None, True, False, False)

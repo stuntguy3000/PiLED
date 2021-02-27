@@ -48,8 +48,8 @@ def run(strip, delay_ms=50, loop_count=10):
     colour2 = None
 
     for y in range(0, loop_count):
-        colour1 = get_random_colour(colour1, colour2)
-        colour2 = get_random_colour(colour1, colour2)
+        colour1 = get_random_colour(False, colour1, colour2)
+        colour2 = get_random_colour(False, colour1, colour2)
 
         for modifier in range(0, LED_COUNT, 1):
             for i in range(0, LED_COUNT // 2):

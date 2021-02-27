@@ -52,7 +52,7 @@ def run(strip, colour=None):
         # I don't think this is an issue as normally profiles don't need to know the previous state of the strip
         #
         # Basically, the optional parameter to prevent duplicate colours is useless here
-        colour = get_random_colour()
+        colour = get_random_colour(False)
 
     strip.fill(colour)
     strip.show()

@@ -48,7 +48,7 @@ def run(strip, delay_ms=10000, loop_count=10):
     """ Default delay is 5 seconds """
 
     """ Set the initial colour """
-    colour = get_random_colour()
+    colour = get_random_colour(False)
     for i in range(LED_COUNT):
         strip[i] = colour
     strip.show()
@@ -57,7 +57,7 @@ def run(strip, delay_ms=10000, loop_count=10):
 
     for loopCountLoop in range(0, loop_count):
         """ Determine the next colour and fade to it """
-        nextColour = get_random_colour(colour)
+        nextColour = get_random_colour(False, colour)
         color_fade(strip, colour, nextColour)
         colour = nextColour
 

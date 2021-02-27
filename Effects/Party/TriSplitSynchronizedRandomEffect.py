@@ -51,13 +51,13 @@ def run(strip, delay_ms=100, loop_count=100):
     previous_colour3 = None
 
     for loop_count_loop in range(0, loop_count):
-        colour1 = get_random_colour(previous_colour1, previous_colour2, previous_colour3)
+        colour1 = get_random_colour(False, previous_colour1, previous_colour2, previous_colour3)
         previous_colour1 = colour1
 
-        colour2 = get_random_colour(previous_colour1, previous_colour2, previous_colour3)
+        colour2 = get_random_colour(False, previous_colour1, previous_colour2, previous_colour3)
         previous_colour2 = colour2
 
-        colour3 = get_random_colour(previous_colour1, previous_colour2, previous_colour3)
+        colour3 = get_random_colour(False, previous_colour1, previous_colour2, previous_colour3)
         previous_colour3 = colour3
 
         for i in range(0, 40):

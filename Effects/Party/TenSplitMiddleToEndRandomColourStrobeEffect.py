@@ -56,13 +56,13 @@ def run(strip, delay_ms=50, leds_per_segment=10, loop_count=10, flash_count=5):
 
             while current_start_led < LED_COUNT:
                 # Top half of the strip
-                colour = get_random_colour(colour)
+                colour = get_random_colour(False, colour)
                 for z in range(current_start_led, current_start_led + leds_per_segment):
                     if 0 <= z < LED_COUNT:
                         strip[z] = colour
 
                 # Bottom half of the strip
-                colour = get_random_colour(colour)
+                colour = get_random_colour(False, colour)
                 bottom_led_start = int(middle_led - (leds_per_segment * led_loop_count) - leds_per_segment / 2)
                 for z in range(bottom_led_start, bottom_led_start + leds_per_segment):
                     if 0 <= z < LED_COUNT:

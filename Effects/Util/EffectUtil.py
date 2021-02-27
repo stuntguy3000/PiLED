@@ -108,18 +108,21 @@ def wheel(position):
         return 0, position * 3, 255 - position * 3
 
 
-def get_random_colour(*previous_colours_list):
-    colours = [(0, 0, 0) for i in range(8)]
+def get_random_colour(allow_black, *previous_colours_list):
+    colours = []
 
     # G R B
-    colours[0] = (255, 0, 0)  # Green
-    colours[1] = (0, 255, 0)  # Red
-    colours[2] = (0, 0, 255)  # Blue
-    colours[3] = (255, 255, 0)  # Yellow
-    colours[4] = (0, 255, 255)  # Pink
-    colours[5] = (255, 0, 255)  # Aqua
-    colours[6] = (100, 255, 0)  # Orange
-    colours[7] = (255, 255, 255)  # White
+    colours.append((255, 0, 0))  # Green
+    colours.append((0, 255, 0))  # Red
+    colours.append((0, 0, 255))  # Blue
+    colours.append((255, 255, 0))  # Yellow
+    colours.append((0, 255, 255))  # Pink
+    colours.append((255, 0, 255))  # Aqua
+    colours.append((100, 255, 0))  # Orange
+    colours.append((255, 255, 255))  # White
+
+    if allow_black:
+        colours.append((0, 0, 0))
 
     # Todo: UGLY AF
     # Someone else can fix it

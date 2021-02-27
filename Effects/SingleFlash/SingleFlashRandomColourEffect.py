@@ -44,7 +44,7 @@ from Effects.Util.EffectUtil import *
 
 
 def run(strip):
-    strip.fill(get_random_colour())
+    strip.fill(get_random_colour(False))
     strip.show()
     time.sleep(0.1)
     blackout(strip, strip)

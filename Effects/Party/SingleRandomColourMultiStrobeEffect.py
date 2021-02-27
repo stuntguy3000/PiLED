@@ -47,7 +47,7 @@ def run(strip, delay_ms=50, loop_count=25, flash_count=10):
     colour = None
 
     for j in range(0, loop_count):
-        colour = get_random_colour(colour)
+        colour = get_random_colour(False, colour)
 
         for x in range(0, flash_count):
             strip.fill(colour)

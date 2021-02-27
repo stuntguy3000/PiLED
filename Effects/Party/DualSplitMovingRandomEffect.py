@@ -48,10 +48,10 @@ def run(strip, loop_count=6):
     previous_colour2 = None
 
     for x in range(0, loop_count):
-        colour1 = get_random_colour(previous_colour1, previous_colour2)
+        colour1 = get_random_colour(False, previous_colour1, previous_colour2)
         previous_colour1 = colour1
 
-        colour2 = get_random_colour(previous_colour1, previous_colour2)
+        colour2 = get_random_colour(False, previous_colour1, previous_colour2)
         previous_colour2 = colour2
 
         for y in range(0, loop_count):

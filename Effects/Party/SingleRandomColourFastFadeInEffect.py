@@ -47,7 +47,7 @@ def run(strip, delay_ms=50, loop_count=30):
     colour = None
 
     for j in range(0, loop_count):
-        colour = get_random_colour(colour)
+        colour = get_random_colour(False, colour)
         strip.fill((0, 0, 0))
         strip.show()
         color_fade(strip, (0, 0, 0), colour, wait_ms=0, steps=delay_ms)

@@ -50,7 +50,7 @@ def run(strip, delay_ms=50, leds_per_segment=10, loop_count=10, flash_count=5):
     start_led = 0
 
     for x in range(0, loop_count):
-        colour = get_random_colour(colour)
+        colour = get_random_colour(False, colour)
 
         for y in range(0, flash_count):
             current_start_led = start_led
