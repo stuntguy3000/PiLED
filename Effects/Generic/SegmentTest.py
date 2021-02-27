@@ -45,39 +45,5 @@ from Effects.Util.SegmentUtil import *
 
 
 def run(strip, colour=None):
-    segment_data = get_segments(5)
-    segment_length = segment_data[0]
-    segment_indexes = segment_data[1]
-
-    print(segment_indexes)
-
-    for index in range(0, len(segment_indexes)):
-        blackout(strip, False)
-
-        segment_start = segment_indexes[index]
-        for ledIndex in range(segment_start, segment_start + segment_length):
-            strip[ledIndex] = (0, 0, 255)
-
-        strip.show()
-        time.sleep(0.2)
-        blackout(strip, True)
-        time.sleep(0.2)
-
-    segment_data = get_segments(4, SegmentOrder.LAST_TO_FIRST)
-    segment_length = segment_data[0]
-    segment_indexes = segment_data[1]
-
-    print(segment_indexes)
-
-    for index in range(0, len(segment_indexes)):
-        blackout(strip, False)
-
-        segment_start = segment_indexes[index]
-        for ledIndex in range(segment_start, segment_start + segment_length):
-            strip[ledIndex] = (255, 0, 0)
-
-        strip.show()
-        time.sleep(0.2)
-        blackout(strip, True)
-        time.sleep(0.2)
-
+    cycle_through_segments(strip, get_segments(5, SegmentOrder.FIRST_TO_LAST, True, False), 0.5, (255, 0, 255))
+    cycle_through_segments(strip, get_segments(5, SegmentOrder.LAST_TO_FIRST, False, True), 0.5, (255, 255, 0))

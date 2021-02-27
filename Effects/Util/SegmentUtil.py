@@ -61,9 +61,10 @@
 #  THE SOFTWARE.
 
 from Handlers.LEDHandler import LED_COUNT
+from Effects.Util.EffectUtil import *
 
 
-class SegmentOrder():
+class SegmentOrder:
     FIRST_TO_LAST = 1
     LAST_TO_FIRST = 2
 
@@ -71,7 +72,7 @@ class SegmentOrder():
 # Generates a list of indexes which represent the start of segments on a LED script
 # For example, splitting a strip of 120 LEDs with segments of length 10
 # should return the length of each segment and a list of [10, 0, 10, 20, 30, 40, 50, 70, 80, 90, 100, 110]
-def get_segments(segment_count, segment_order=SegmentOrder.FIRST_TO_LAST):
+def get_segments(segment_count, segment_order=SegmentOrder.FIRST_TO_LAST, skip_first_segment=False, skip_last_segment=False):
     # Validity check (segment_count must be more than 1 segment and divisible by LED_COUNT)
     if segment_count < 1 or segment_count % LED_COUNT == 0:
         # Return no segments
@@ -83,8 +84,52 @@ def get_segments(segment_count, segment_order=SegmentOrder.FIRST_TO_LAST):
     for i in range(0, LED_COUNT, length):
         segment_list.append(i)
 
+    if skip_first_segment is True:
+        segment_list.pop(0)
+
+    if skip_last_segment is True:
+        segment_list.pop(len(segment_list) - 1)
+
     # Order segments (FIRST_TO_LAST is the catch all condition)
     if segment_order == SegmentOrder.LAST_TO_FIRST:
         return length, segment_list[::-1]
 
     return length, segment_list
+
+
+def cycle_through_segments(strip, segment_data, cycle_delay, color=None, blackout_after_delay=0, blackout_before=True):
+    """
+    Cycles through all segments using defined parameters
+    :param strip: the LED strip object
+    :param segment_data: the returned data from get_segments
+    :param cycle_delay: the time in ms to delay the cycle changes by
+    :param blackout_after_delay: to blackout the strip after cycle_delay, set this value to a time length above 0 (Default 0)
+    :param blackout_before: blackouts the strip before cycling (Default True)
+    :param color: the colour to use on each cycle. If None, a random colour is chosen (Default None)
+    """
+    segment_length = segment_data[0]
+    segment_indexes = segment_data[1]
+
+    print(segment_indexes)
+
+    previous_colour = None
+
+    for index in range(0, len(segment_indexes)):
+        if blackout_before:
+            blackout(strip, False)
+
+        chosen_colour = color
+
+        if chosen_colour is None:
+            chosen_colour = get_random_colour(previous_colour)
+
+        segment_start = segment_indexes[index]
+        for ledIndex in range(segment_start, segment_start + segment_length):
+            strip[ledIndex] = chosen_colour
+
+        strip.show()
+        time.sleep(cycle_delay)
+
+        if blackout_after_delay > 0:
+            blackout(strip, True)
+            time.sleep(blackout_after_delay)
