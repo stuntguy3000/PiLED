@@ -26,38 +26,7 @@ sudo /home/pi/PiLED/venv/bin/python3 /home/pi/PiLED/PiLED.py
 ### Blackout
 Used to blackout (turn off) the entire LED strip, over 60 seconds.
 
-### CSGO
-CS:GO GSI Effects. Requires a **gamestate_intsgration_piled.cfg** file with the following contents, created at `SteamLibrary\steamapps\common\Counter-Strike Global Offensive\csgo\cfg`.
-```
-"PiLED"
-{
- "uri" "http://192.168.1.2:3000/"
- "timeout" "1.0"
- "buffer"  "0.1"
- "throttle" "0.1"
- "heartbeat" "30.0"
- "auth"
- {
-   "token" "PiLED"
- }
- "data"
- {
-            "provider"                        "1"
-            "phase_countdowns"                "1"
-            "map_round_wins"                  "1"
-            "round"                           "1"
-            "bomb"                            "1"
-            "map"                             "1"
-            "player_match_stats"              "1"
-            "player_position"                 "1"
-            "player_weapons"                  "1"
-            "player_state"                    "1"
-            "player_id"                       "1"
- }
-}
-```
-
-### Generic
+### Normal
 Considered the "Normal" mode, contains multiple slow speed and low impact effects.
 
 ### Party
@@ -65,10 +34,6 @@ Contains a collection of strobes and fast moving effects and sequences to send t
 
 ### Police
 Various effects using blue/red/white coloured strobes to emulate Police/EMS light bar sequences.
-
-### RocketLeague
-Rocket League GSI Effects. 
-Requires a special GSI plugin that is still under development because it runs like crap! Watch this space... (aka never)
 
 ### SingleFlash
 Used to strobe a single colour for a very short amount of time, like a 'tap' button.

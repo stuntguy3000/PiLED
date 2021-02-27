@@ -45,18 +45,14 @@ import multiprocessing
 
 from Modes import BlackoutMode
 from Modes import OffMode
-from Modes import CSGOMode
 from Modes import NormalMode
 from Modes import PartyMode
 from Modes import PoliceMode
-from Modes import RocketLeagueMode
 from Modes import SingleColourMode
 from Modes import SingleFlashMode
 from Modes import SlowFadeInMode
 from Modes import SlowFadeOutMode
 from Modes import FireMode
-from Modes import USElectionMode
-from Modes import USElectionAlertMode
 
 instance = None
 current_mode_thread = None
@@ -69,15 +65,11 @@ class ModeHandlerClass:
         'SINGLE_COLOUR': SingleColourMode,
         'SINGLE_FLASH': SingleFlashMode,
         'POLICE': PoliceMode,
-        'CSGO': CSGOMode,
-        'ROCKETLEAGUE': RocketLeagueMode,
         'BLACKOUT': BlackoutMode,
         'OFF': OffMode,
         'SLOWFADEOUT': SlowFadeOutMode,
         'SLOWFADEIN': SlowFadeInMode,
         'FIRE': FireMode,
-        'USELECTION': USElectionMode,
-        'USELECTIONALERT': USElectionAlertMode,
     }
 
     def init(self, PiLED):
