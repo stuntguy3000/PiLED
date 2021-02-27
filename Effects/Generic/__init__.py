@@ -27,3 +27,4 @@ import Effects.Generic.RainbowCycleEffect
 import Effects.Generic.RandomColourCycleEffect
 import Effects.Generic.RepeatingRainbowCycleEffect
 import Effects.Generic.StaticRandomColourEffect
+import Effects.Generic.SegmentTest

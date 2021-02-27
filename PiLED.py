@@ -27,13 +27,10 @@
 # |  __/| | |___| |___| |_| |
 # |_|   |_|_____|_____|____/
 #
-# PiLED v1.0 by stuntguy3000
+# PiLED by stuntguy3000
 #
 # A very basic set of Python scripts to power and control WS2812B LEDs using a Raspberry Pi.
 # -------------------------------------------------------------------------------------------
-
-# Run it
-# https://stackoverflow.com/questions/6523791/why-is-python-running-my-module-when-i-import-it-and-how-do-i-stop-it
 
 class PiLEDClass:
     def __init__(self):
@@ -74,5 +71,7 @@ class PiLEDClass:
 
 
 if __name__ == "__main__":
+    # Run it
+    # https://stackoverflow.com/questions/6523791/why-is-python-running-my-module-when-i-import-it-and-how-do-i-stop-it
     instance = PiLEDClass()
     instance.load()

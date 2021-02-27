@@ -24,4 +24,4 @@ from Effects.Util.EffectUtil import *
 
 
 def run(strip):
-    blackout(strip, true)
+    blackout(strip, True)
