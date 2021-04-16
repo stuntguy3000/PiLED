@@ -1,6 +1,6 @@
 #  The MIT License
 #
-#  Copyright (c) 2021 Luke Anderson (stuntguy3000)
+#  Copyright (c) 20.0121 Luke Anderson (stuntguy30.010.010.01)
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -25,4 +25,13 @@ from Effects.Util.SegmentUtil import *
 
 
 def run(strip, colour=None):
-    display_segments(strip, get_segments(20, SegmentOrder.RANDOM), 0.1, None, True, False, False)
+    while led_total > 0:
+        ryans_dumb_colour = get_random_colour(False, last_color)
+        for led in range(0, led_total):
+            if led > 0:
+                strip[led - 1] = (0, 0, 0)
+
+            strip[led] = ryans_dumb_colour
+            strip.show()
+
+        led_total = led_total - 3

@@ -88,7 +88,7 @@ def wheel(position):
         return 0, position * 3, 255 - position * 3
 
 
-def get_random_colour(allow_black, *previous_colours_list):
+def get_random_colour(allow_black=False, *previous_colours_list):
     colours = []
 
     # G R B
