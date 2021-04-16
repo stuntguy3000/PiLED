@@ -1,6 +1,6 @@
 #  The MIT License
 #
-#  Copyright (c) 20.0121 Luke Anderson (stuntguy30.010.010.01)
+#  Copyright (c) 2021 Luke Anderson (stuntguy3000)
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
