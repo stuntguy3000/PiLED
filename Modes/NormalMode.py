@@ -38,5 +38,4 @@ def run():
     global effects
 
     while True:
-        run_mode(SegmentTest, instance)
-        #run_random_mode(effects, instance)
+        run_random_mode(effects, instance)

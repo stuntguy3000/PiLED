@@ -24,23 +24,28 @@ from Effects.Party import *
 from Modes.Util.ModeUtil import *
 
 instance = None
-effects = [SingleRainbowCycleStrobeEffect, SingleRGBCycleStrobeEffect, MultipleRainbowCycleStrobeEffect,
-           SingleRandomColourEffect, SingleRandomColourStrobeEffect, SingleRandomColourMultiStrobeEffect,
-           SingleRandomColourSlowMultiStrobeEffect, SingleRandomColourSlowStrobeEffect,
+# effects = [SingleRainbowCycleStrobeEffect, SingleRGBCycleStrobeEffect, MultipleRainbowCycleStrobeEffect,
+#           SingleRandomColourEffect, SingleRandomColourStrobeEffect, SingleRandomColourMultiStrobeEffect,
+#           SingleRandomColourSlowMultiStrobeEffect, SingleRandomColourSlowStrobeEffect,
+#           DualAlternatingPixelRandomEffect, DualAlternatingPixelRandomStrobeEffect,
+#           DualSplitRandomEffect, DualSplitRandomStrobeEffect,
+#           DualSplitSynchronizedRandomEffect, DualSplitSynchronizedRandomStrobeEffect,
+#           TriSplitRandomEffect, TriSplitRandomStrobeEffect,
+#           TriSplitSynchronizedRandomEffect, TriSplitSynchronizedRandomStrobeEffect,
+#           FourSplitRandomEffect, FourSplitRandomStrobeEffect,
+#           FourSplitSynchronizedRandomEffect, FourSplitSynchronizedRandomStrobeEffect,
+#           DualSplitMovingRandomEffect,
+#           TenSplitMiddleToEndRandomColourEffect, TenSplitMiddleToEndRandomColourStrobeEffect,
+#           TenSplitEndToMiddleRandomColourEffect, TenSplitEndToMiddleRandomColourStrobeEffect,
+#           TenSplitMiddleToEndRandomLoopColourEffect, TenSplitMiddleToEndRandomLoopColourStrobeEffect,
+#           TenSplitEndToMiddleRandomLoopColourEffect, TenSplitEndToMiddleRandomLoopColourStrobeEffect,
+#           TenSplitStartToEndRandomLoopColourEffect, TenSplitStartToEndRandomColourEffect,
+#           SingleRandomColourFastFadeOutEffect, SingleRandomColourFastFadeInEffect]
+
+effects = [SegmentEffects, SegmentEffects, SegmentEffects, SegmentEffects, SegmentEffects, SegmentEffects, SegmentEffects,
            DualAlternatingPixelRandomEffect, DualAlternatingPixelRandomStrobeEffect,
-           DualSplitRandomEffect, DualSplitRandomStrobeEffect,
-           DualSplitSynchronizedRandomEffect, DualSplitSynchronizedRandomStrobeEffect,
-           TriSplitRandomEffect, TriSplitRandomStrobeEffect,
-           TriSplitSynchronizedRandomEffect, TriSplitSynchronizedRandomStrobeEffect,
-           FourSplitRandomEffect, FourSplitRandomStrobeEffect,
-           FourSplitSynchronizedRandomEffect, FourSplitSynchronizedRandomStrobeEffect,
-           DualSplitMovingRandomEffect,
-           TenSplitMiddleToEndRandomColourEffect, TenSplitMiddleToEndRandomColourStrobeEffect,
-           TenSplitEndToMiddleRandomColourEffect, TenSplitEndToMiddleRandomColourStrobeEffect,
-           TenSplitMiddleToEndRandomLoopColourEffect, TenSplitMiddleToEndRandomLoopColourStrobeEffect,
-           TenSplitEndToMiddleRandomLoopColourEffect, TenSplitEndToMiddleRandomLoopColourStrobeEffect,
-           TenSplitStartToEndRandomLoopColourEffect, TenSplitStartToEndRandomColourEffect,
-           SingleRandomColourFastFadeOutEffect, SingleRandomColourFastFadeInEffect]
+           MultipleRainbowCycleStrobeEffect, SingleRandomColourFastFadeInEffect,
+           SingleRandomColourFastFadeOutEffect, SingleRGBCycleStrobeEffect]
 
 
 def set_instance(PiLED):
