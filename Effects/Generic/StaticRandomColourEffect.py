@@ -36,3 +36,7 @@ def run(strip, colour=None):
 
     strip.fill(colour)
     strip.show()
+
+    for j in range(0, 38):
+        strip[j] = (0,0,0)
+    strip.show()

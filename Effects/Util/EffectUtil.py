@@ -49,7 +49,7 @@ def color_fade(strip, colorFrom, colorTo, wait_ms=5, steps=200):
         b += step_B
 
 
-def color_fade_across_strip(strip, colorFrom, colorTo):
+def color_fade_across_strip(strip, colorFrom, colorTo, startOffset=0):
     step_R = (colorTo[0] - colorFrom[0]) / LED_COUNT
     step_G = (colorTo[1] - colorFrom[1]) / LED_COUNT
     step_B = (colorTo[2] - colorFrom[2]) / LED_COUNT
@@ -58,9 +58,10 @@ def color_fade_across_strip(strip, colorFrom, colorTo):
     g = int(colorFrom[1])
     b = int(colorFrom[2])
 
-    for i in range(LED_COUNT):
+    for i in range(startOffset, LED_COUNT + startOffset):
         colour = (int(r), int(g), int(b))
-        strip[i] = colour
+        adjustedIndex = get_index_with_modifier(i, 0)
+        strip[adjustedIndex] = colour
 
         r += step_R
         g += step_G

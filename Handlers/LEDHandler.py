@@ -25,8 +25,8 @@ import neopixel
 
 instance = None
 
-LED_COUNT = 120
-LED_PIN = board.D18
+LED_COUNT = 125
+LED_PIN = board.D21
 
 
 class LEDHandlerClass:

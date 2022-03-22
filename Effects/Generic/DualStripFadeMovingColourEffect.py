@@ -20,24 +20,14 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from Effects.Generic import *
-from Modes.Util.ModeUtil import *
-
-instance = None
-effects = [RainbowCycleEffect, FullRainbowCycleEffect, RGBCycleEffect, RandomColourCycleEffect,
-           DualSplitMovingColourEffect, RepeatingRainbowCycleEffect]
+from Effects.Util.EffectUtil import *
 
 
-def set_instance(PiLED):
-    global instance
-    instance = PiLED
+def run(strip, delay_ms=500000, loop_count=10):
+    colour1 = (0,255,255)
+    colour2 = (0,0,255)
 
+    for i in range(LED_COUNT):
+        color_fade_across_strip(strip, colour1, colour2, i)
 
-def run():
-    global instance
-    global effects
-
-    #run_mode(DualStripFadeMovingColourEffect, instance)
-
-    while True:
-        run_random_mode(effects, instance)
+    time.sleep(delay_ms / 1000.0)

@@ -28,3 +28,4 @@ import Effects.Generic.RandomColourCycleEffect
 import Effects.Generic.RepeatingRainbowCycleEffect
 import Effects.Generic.StaticRandomColourEffect
 import Effects.Generic.Ryan
+import Effects.Generic.DualStripFadeMovingColourEffect
